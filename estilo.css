@@ -1,3 +1,6 @@
+/*https://www.web-dev-qa-db-es.com/es/javascript/como-leer-un-archivo-json-local-externo-en-javascript/1043362222/#:~:text=json)%20usando%20javascript%2C%20primero%20cree,junto%20con%20el%20archivo%20javascript.*/
+
+
 nav
 {
   display: flex;
@@ -147,4 +150,53 @@ a
     width: 10rem;
     border: 1px solid black;
     
+}
+
+
+
+.json
+{
+    display: flex;
+    margin-top: 2rem;
+    border: 2px solid blue;
+    gap: 0.5rem;
+    height: auto;
+    width: 100%;
+}
+
+.container
+.json
+.child
+{
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    height: 10rem;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid orange;
+}
+.container
+.json
+.child:hover
+{
+    border: 1px solid black;
+}
+
+.total
+{
+    width: 100%;
+    height: auto;
+}
+
+.listacompra
+{
+    border: 1px solid red;
+    display: block;
+    margin-top: 2rem;
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+
 }
