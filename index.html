@@ -80,13 +80,18 @@
         </div>
     
         <div class="containerLista">
-           
-                                    <table class="listacompra" >
+
+                                    <button class="btnBorrar" id="btnborrarTodo" onclick="borrarTodo()">Borrar Todo</button>
+                                    
+                                    <table class="listacompra" id="tabla" >
 
                                         <thead>
                                             <tr>
                                                 <td>Productos</td>
-                                                <td>Precio</td>
+                                                <td>Precio Unitario</td>
+                                                <td>Unidades</td>
+                                                <td>Sub-total</td>
+                                                <td>Accionar</td>
                                             </tr>
                                         </thead>
                                         <tbody id="listacompra">
@@ -96,7 +101,11 @@
                             
                                 
                                     <div class="total">
-                                        <text>Total: <text id="total">  </text>$</text>
+                                        <text>Total: <text id="total"></text>$</text>
+                                        <button id="btnTerminarCompra" class="btnTerminarCompra" onclick="TerminarComprar()"><a id="link">Terminar Compra</a></button>
+                                    </div>
+                                    <div id="datosContacto">
+
                                     </div>
 
         </div>

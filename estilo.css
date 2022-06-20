@@ -132,7 +132,7 @@ a
 {
     display: flex;
     height:20%;
-    width: 40%;
+    width: 90%;
     gap: 1rem;
     flex-wrap: wrap;
     border: 1px solid black;
@@ -183,20 +183,113 @@ a
     border: 1px solid black;
 }
 
-.total
-{
-    width: 100%;
-    height: auto;
+
+                                    /*CUENTA*/
+                                    .total
+                                    {
+                                        width: 100%;
+                                        height: auto;
+                                    }
+
+                                    .containerLista
+                                    {
+                                        margin-top: 2rem;
+                                    }
+                                    .listacompra
+                                    {
+                                        border: 1px solid red;
+                                        display: block;
+                                        position: relative;
+                                        width: auto;
+                                        height: auto;
+                                        text-align: center;
+
+                                    }
+
+                                    .containerLista 
+                                    .listacompra
+                                    td
+                                    {
+                                        border: 1px solid green;
+                                    }
+
+                                    .listacompra 
+                                    thead 
+                                    td
+                                    {
+                                        font-weight: 700;
+                                    }
+
+
+/*BOTONES CUENTA*/
+
+
+.btnAgregar,.btnEliminar{
+    color: white;
+    border-radius: 10px;
 }
 
-.listacompra
+.btnEliminar:hover, .btnAgregar:hover
 {
-    border: 1px solid red;
-    display: block;
-    margin-top: 2rem;
-    position: relative;
-    width: auto;
-    height: auto;
-    text-align: center;
+    box-shadow: 0 0 4px white;
+    color: orange;
+}
 
+                                .btnEliminar
+                                {
+                                    background: rgb(67, 11, 11);
+                                
+                                }
+                                .btnAgregar
+                                {
+                                    background: rgb(11, 67, 14);
+                                
+                                }
+
+/*BOTONES */
+.btnTerminarCompra,
+.btnBorrar
+
+{
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 00.5rem;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    background: rebeccapurple;
+                                    }
+                                    .btnTerminarCompra:hover,
+                                    .btnBorrar:hover
+                                    {
+                                       box-shadow: 0 0 4px white;
+                                       color: orange;
+
+                                    }
+
+                                    .total 
+                                    text
+                                    {
+                                        font-weight: 600;
+                                    }
+#datosContacto 
+{
+    
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 85%;
+    
+    
+}
+
+#datosContacto button, .btnenviarPedido
+{
+    text-align: center;
+    text-decoration: none;
+    background: darkblue;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 1rem;
 }
