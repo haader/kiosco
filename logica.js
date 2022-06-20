@@ -104,7 +104,7 @@ function borrarTodo(){
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
         document.getElementById("totalid").innerHTML+='<div id="datosContacto"></div>';
         booleanTermonarCopra=false;
-        
+
         array=[];
         array2=[];
         let i=0;
@@ -140,9 +140,9 @@ function TerminarComprar(){
                 break;                
             case false:
 
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="dirección de entrega"></input>';
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="entre calles"></input>';
-                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="color de pared,rejas ect"></textArea>';
+                document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega"></input>';
+                document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles"></input>';
+                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)"></textArea>';
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         
                 booleanTermonarCopra=true;
@@ -158,7 +158,26 @@ function TerminarComprar(){
     
 }
 
-function enviarPedidos(){
+function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
+
+    let address=document.getElementById("direccion").value;/* direccion */
+    let between_streets=document.getElementById("entrecalle").value; /* entre calle */
+    let description=document.getElementById("detalles").value; /* descripcion */
+    
+
+                if(address==""||between_streets==""||description==""){
+                    
+                    alert("por favor ingrese los dato solicitados");
+
+                }else{
+                    
+                    guardarDatos();
+
+                }
+    
+}
+
+function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS COLOCA EN UNA URL */
 
 
     let stringProductos="";
@@ -173,9 +192,8 @@ function enviarPedidos(){
     whatsapp+="Compraste:"+saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;
     document.getElementById("datosContacto").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
+
 }
-
-
 
 /*
 
