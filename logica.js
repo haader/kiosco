@@ -29,9 +29,13 @@ myProduc.forEach(element => {
 function sumar(id){
     total+=myProduc[id].precio;
     document.getElementById("total").innerHTML=total;
+
+    
+
 }
 
 function restar(id){ 
+
             total-=myProduc[id].precio;
             document.getElementById("total").innerHTML=total;
 }
@@ -73,6 +77,7 @@ function NOcomprar(id){/*boton eliminar compra */
     restar(id);
 
 }
+/* COMPRAR*/
 
 function comprar(id){/*es apretado en las cards (cartas para comprar) y en el btn agregar (lista de compras) */
     contadorCarrito++;
@@ -104,6 +109,10 @@ function comprar(id){/*es apretado en las cards (cartas para comprar) y en el bt
 function borrarTodo(){
 
     if(total!=0){
+
+        contadorCarrito=0;
+        document.getElementById("carritoCont").innerHTML=contadorCarrito;
+    
 
         document.getElementById("listacompra").remove();
         document.getElementById("datosContacto").remove();
