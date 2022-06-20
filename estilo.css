@@ -158,8 +158,12 @@ a
 {
     display: flex;
     margin-top: 2rem;
-    border: 2px solid blue;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 0.5rem;
+    border: 2px solid blue;
+    
     height: auto;
     width: 100%;
 }
@@ -183,6 +187,121 @@ a
     border: 1px solid black;
 }
 
+/*CONTENEDOR PANEL, =>(CHILD) CARRITO, CUENTA*/
+.containerPanel
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: fixed;
+    right: 0;
+    top: 2rem;
+    z-index: 2;
+    height: 100%;
+    opacity: 0.5;
+    transition: 0.5s;
+}                                   .containerPanel:hover
+                                    {
+                                        opacity: 1;   
+                                    }
+                                    .containerLista{
+                                        display: none;
+                                        background: orange;
+                                        height: 100%;
+                                        opacity: 0.25;
+                                        transform: translateX(20rem);
+                                        transition: 0.5s;
+                                       
+
+                                    }
+                                    .containerPanel:hover 
+                                    .iconChango
+                                    ~.containerLista{
+                                        display: block;
+                                        opacity: 1;
+                                        transform: translateX(0rem);
+                                        
+                                    }
+
+.containerPanel 
+.iconChango-
+{
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+
+}
+.containerPanel 
+.iconChango
+ul
+{
+    border: 1px solid blue;
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.containerPanel 
+.iconChango
+ul
+li
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+    height: 3.5rem;
+
+}
+#icon
+{
+    display: flex;
+    background: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    color: black;
+    font-size: 1.5rem;
+}
+#carritoCont{
+    display: flex;
+    position: absolute;
+    color: black;
+    font-weight: 700;
+    background: white;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: -0.5rem;
+    left:-0.5rem;
+    border: 1px solid black;
+}
+#carritoTotal
+{
+    display: flex;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+}
+.iconChango 
+li
+{
+    border: 1px solid black;
+} 
+
+/*CONTAINERLISTA*/
+.containerLista
+{
+    border: 1px solid black;
+}
+
 
                                     /*CUENTA*/
                                     .total
@@ -191,10 +310,7 @@ a
                                         height: auto;
                                     }
 
-                                    .containerLista
-                                    {
-                                        margin-top: 2rem;
-                                    }
+                                  
                                     .listacompra
                                     {
                                         border: 1px solid red;

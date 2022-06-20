@@ -1,4 +1,4 @@
-productos = '[{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
+productos = '[{"name" : "leche", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
 
 /*VARIABLES!!! */
 
@@ -8,6 +8,7 @@ let contador=0;/*cantidad de veces que aparece en la lista */
 /*unidades del producto*/
 let subtotal=0; /*contador * precioUnitario */
 cont=0;
+let contadorCarrito=0;
 let numero="1155179365";
 let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";
 let texto="";
@@ -44,6 +45,10 @@ function restar(id){
 
 function NOcomprar(id){/*boton eliminar compra */
 
+    contadorCarrito--;
+    document.getElementById("carritoCont").innerHTML=contadorCarrito;
+
+
     let uni=myProduc[id].unidades;
 
 
@@ -70,6 +75,8 @@ function NOcomprar(id){/*boton eliminar compra */
 }
 
 function comprar(id){/*es apretado en las cards (cartas para comprar) y en el btn agregar (lista de compras) */
+    contadorCarrito++;
+    document.getElementById("carritoCont").innerHTML=contadorCarrito;
 
     let uni=myProduc[id].unidades;
 
@@ -166,7 +173,7 @@ function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
     
 
                 if(address==""||between_streets==""||description==""){
-                    
+
                     alert("por favor ingrese los dato solicitados");
 
                 }else{
