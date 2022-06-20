@@ -223,6 +223,15 @@ https://forfrontend.tips/eliminar-elementos-de-un-array-en-javascript
 (hacer un pull por consola)
 git pull --tags origin gh-pages  
 
+
+
+
+
+
+git branch -m master gh-pages
+git fetch origin
+git branch -u origin/gh-pages gh-pages
+git remote set-head origin -a
 */
 
 
