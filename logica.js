@@ -19,7 +19,7 @@ let booleanTermonarCopra=false;
 var id=0;
 /*dom: creo la lista de productos */
 myProduc.forEach(element => {
-    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><h3 id="pid'+cont+'">Producto: '+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
+    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
     
     cont++;
 });
@@ -76,7 +76,7 @@ function comprar(id){/*es apretado en las cards (cartas para comprar) y en el bt
 
     if(uni==0){
         myProduc[id].unidades++;
-        document.getElementById("listacompra").innerHTML+='<tr id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td><button class="btnEliminar'+id+'" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar'+id+'" onclick="comprar('+id+')">agregar</button></td></tr>';
+        document.getElementById("listacompra").innerHTML+='<tr id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">agregar</button></td></tr>';
         sumarSubTotal(id);
         array.push(id);
         console.log(array);
@@ -99,7 +99,12 @@ function borrarTodo(){
     if(total!=0){
 
         document.getElementById("listacompra").remove();
+        document.getElementById("datosContacto").remove();
+
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
+        document.getElementById("totalid").innerHTML+='<div id="datosContacto"></div>';
+        booleanTermonarCopra=false;
+        
         array=[];
         array2=[];
         let i=0;
@@ -108,6 +113,7 @@ function borrarTodo(){
             myProduc[i].unidades=0;
             i++;
         })
+        i=0;
     
         total=0;
         document.getElementById("total").innerHTML=total;
@@ -136,7 +142,7 @@ function TerminarComprar(){
 
                 document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="dirección de entrega"></input>';
                 document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="entre calles"></input>';
-                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="entrecalle" placeholder="color de pared,rejas ect"></textArea>';
+                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="color de pared,rejas ect"></textArea>';
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         
                 booleanTermonarCopra=true;
@@ -179,6 +185,9 @@ https://api.whatsapp.com/send/?phone=5491164688926&text=
 
 (COPIAR AL HERRAMIETAS DEV)
 https://forfrontend.tips/eliminar-elementos-de-un-array-en-javascript
+
+(hacer un pull por consola)
+git pull --tags origin gh-pages  
 
 */
 
