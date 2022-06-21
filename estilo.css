@@ -200,35 +200,35 @@ a
     height: 100%;
     opacity: 0.5;
     transition: 0.5s;
-}                                   .containerPanel:hover
-                                    {
-                                        opacity: 1;   
-                                    }
+    transform: translateX(90%);
+    transition: 0.5s;
+}                                
+                                  
                                     .containerLista{
-                                        display: none;
+                                        visibility: hidden;
                                         background: orange;
                                         height: 100%;
                                         opacity: 0.25;
-                                        transform: translateX(20rem);
-                                        transition: 0.5s;
-                                       
-
+                                        transition: 0.5s;                                      
                                     }
-                                    .containerPanel:hover 
-                                    .iconChango
-                                    ~.containerLista{
-                                        display: block;
-                                        opacity: 1;
-                                        transform: translateX(0rem);
+                                    .containerPanel
+                                    .iconChango:hover 
+                                    ~.containerLista,
+                                    .containerPanel
+                                    .containerLista:hover{
+                                        visibility: visible;
+                                        opacity: 1;  
                                         
                                     }
 
 .containerPanel 
-.iconChango-
+.iconChango
 {
-    border: 1px solid red;
+
     display: flex;
     position: relative;
+    margin-top: 0.5rem;
+    height: 3rem;
 
 }
 .containerPanel 
