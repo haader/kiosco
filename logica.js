@@ -1,4 +1,4 @@
-productos = '[{"name" : "leche", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
+productos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
 
 /*VARIABLES!!! */
 
@@ -20,7 +20,7 @@ let booleanTermonarCopra=false;
 var id=0;
 /*dom: creo la lista de productos */
 myProduc.forEach(element => {
-    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
+    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
     
     cont++;
 });
@@ -30,6 +30,8 @@ function sumar(id){
     total+=myProduc[id].precio;
     document.getElementById("total").innerHTML=total;
 
+    document.getElementById("carritoTotal").innerText=total+"$";
+
     
 
 }
@@ -38,6 +40,8 @@ function restar(id){
 
             total-=myProduc[id].precio;
             document.getElementById("total").innerHTML=total;
+
+            document.getElementById("carritoTotal").innerText=total+"$";
 }
 
                                             function sumarSubTotal(id){
@@ -112,6 +116,7 @@ function borrarTodo(){
 
         contadorCarrito=0;
         document.getElementById("carritoCont").innerHTML=contadorCarrito;
+        document.getElementById("carritoTotal").innerText=total+"$";
     
 
         document.getElementById("listacompra").remove();
@@ -133,6 +138,8 @@ function borrarTodo(){
     
         total=0;
         document.getElementById("total").innerHTML=total;
+
+        document.getElementById("carritoTotal").innerText=total+"$";
     
        /* btnTerminarCompra.setAttribute('onClick',"compranull()");*/
 
