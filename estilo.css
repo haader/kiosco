@@ -55,7 +55,7 @@ ul
                     {
                         display: flex;
                         position: relative;
-                        flex-direction: column;
+                        flex-direction: row;
                         text-decoration: none;
                         font-family: monospace;
                         font-size: 1rem;
@@ -71,23 +71,31 @@ ul
                     a
                     .icon
                     {
-                        height: 70%;
+                        height: 130%;
                         width: auto;
                         color: white;
+                        margin-left: 5px;
                         z-index: 2;
                     }
+                    header 
+                    nav 
+                    ul 
+                    .lista:hover
+                    a{
+                        transform: translateY(5px);
+                    }
 
-header 
-nav 
-ul 
-.lista
-a
-.texto
-{
-    color: red;
-    font-weight: 400;
-    z-index: 2;
-}
+                    header 
+                    nav 
+                    ul 
+                    .lista
+                    a
+                    .texto
+                    {
+                        color: red;
+                        font-weight: 400;
+                        z-index: 2;
+                    }
 
 header 
 nav 
@@ -173,11 +181,19 @@ a
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 0.5rem;
-    border: 2px solid blue;
+    
     
     height: auto;
     width: 100%;
 }
+                                .json
+                                .seccion
+                                {
+                                    display: flex;
+                                    width: 100%;
+                                    align-items: center;
+                                    justify-content: center;
+                                }
 
 .container
 .json
