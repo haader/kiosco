@@ -227,27 +227,26 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
 
 }
 /*HOVER EN containerPanel */
-let padre=document.getElementById("containerPanel");
-let child1=document.getElementById("iconChango");
-let child2=document.getElementById("containerLista");
+                        let padre=document.getElementById("containerPanel");
+                        let child1=document.getElementById("iconChango");
+                        let child2=document.getElementById("containerLista");
 
-function entra()
-{
-    padre.style="transform: translateX(0rem);"
-    padre.style.opacity=1;
-}
+                        function entra()
+                        {
+                            padre.style="transform: translateX(0rem);"
+                            padre.style.opacity=1;
+                        }
 
-function sale()
-{
-    padre.style="transform: translateX(90%);"
-}
-child1.addEventListener("click",entra);
-child1.addEventListener("click",sale);
+                        function sale()
+                        {
+                            padre.style="transform: translateX(90%);"
+                        }
+                        child1.addEventListener("click",entra);
+                        child1.addEventListener("click",sale);
 
-child1.addEventListener("mouseover",entra);
-child1.addEventListener("mouseout",sale);
-child2.addEventListener("mouseover",entra);
-child2.addEventListener("mouseout",sale);
+                       
+                        child2.addEventListener("mouseover",entra);
+                        child2.addEventListener("mouseout",sale);
 
 function buyanimate(id){
 
