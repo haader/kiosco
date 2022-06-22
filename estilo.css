@@ -89,6 +89,16 @@ a
     z-index: 2;
 }
 
+header 
+nav 
+ul 
+.lista
+a
+.texto:hover
+{
+    color: chocolate;
+}
+
 .imagen
  {
     width: 100%;
