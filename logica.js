@@ -2,7 +2,7 @@ productos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "
 
 /*VARIABLES!!! */
 let booleanCarrrito=false;
-
+let booleanListaCompra=false;
 var myProduc = JSON.parse(productos);
 let total=0;/*sumatoria de todos los precios*/ 
 let contador=0;/*cantidad de veces que aparece en la lista */
@@ -97,7 +97,15 @@ function comprar(id){/*es apretado en las cards (cartas para comprar) y en el bt
 
     if(uni==0){
         myProduc[id].unidades++;
-        document.getElementById("listacompra").innerHTML+='<tr id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td class="tdbuttons"><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">Agregar</button></td></tr>';
+        /*CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" */
+        if(booleanListaCompra==false){
+            document.getElementById("listacompra").innerHTML+='<tr class="'+booleanListaCompra+'" id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td class="tdbuttons"><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">Agregar</button></td></tr>';
+            booleanListaCompra=true;
+        }else{
+            document.getElementById("listacompra").innerHTML+='<tr class="'+booleanListaCompra+'" id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td class="tdbuttons"><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">Agregar</button></td></tr>';
+            booleanListaCompra=false;
+        }
+        
         sumarSubTotal(id);
         array.push(id);
         console.log(array);

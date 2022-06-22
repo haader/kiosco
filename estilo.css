@@ -394,6 +394,19 @@ li
 
                                     .containerLista 
                                     .listacompra
+                                    .true
+                                    {
+                                        background: chocolate;
+                                    }
+                                    .containerLista 
+                                    .listacompra
+                                    .false
+                                    {
+                                        background: orange;
+                                    }
+
+                                    .containerLista 
+                                    .listacompra
                                     td
                                     {
                                         border: 1px solid green;
