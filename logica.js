@@ -18,6 +18,8 @@ let saltolinea="+%0A+";
 let booleanTermonarCopra=false;
 
 var id=0;
+
+/*dom: creo la lista de productos */
 /*dom: creo la lista de productos */
 myProduc.forEach(element => {
     document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
@@ -85,6 +87,8 @@ function NOcomprar(id){/*boton eliminar compra */
 
 function comprar(id){/*es apretado en las cards (cartas para comprar) y en el btn agregar (lista de compras) */
     contadorCarrito++;
+    buyanimate(id);
+
     document.getElementById("carritoCont").innerHTML=contadorCarrito;
 
     let uni=myProduc[id].unidades;
@@ -113,6 +117,11 @@ function comprar(id){/*es apretado en las cards (cartas para comprar) y en el bt
 function borrarTodo(){
 
     if(total!=0){
+        /*eliminamo los indicadores de "seleccionado" */
+      
+        [].forEach.call(document.querySelectorAll(".buyanimate"), function(buyanimate){
+            buyanimate.parentNode.removeChild(buyanimate);
+        });
 
         contadorCarrito=0;
         document.getElementById("carritoCont").innerHTML=contadorCarrito;
@@ -232,10 +241,24 @@ function sale()
 {
     padre.style="transform: translateX(90%);"
 }
+child1.addEventListener("click",entra);
+child1.addEventListener("click",sale);
 
 child1.addEventListener("mouseover",entra);
+child1.addEventListener("mouseout",sale);
 child2.addEventListener("mouseover",entra);
 child2.addEventListener("mouseout",sale);
+
+function buyanimate(id){
+
+    try{
+        document.getElementById("buyanimate"+id).remove();
+    }catch{
+
+    }
+    document.getElementById(id).innerHTML+='<span class="buyanimate" id="buyanimate'+id+'">Seleccionado</span>';
+    
+};
 
 /*
 

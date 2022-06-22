@@ -127,6 +127,7 @@ a
 }
 
 /*tarjetas*/
+/*tarjetas*/
 .container
 .explicacion
 {
@@ -172,6 +173,7 @@ a
 .json
 .child
 {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     width: 10rem;
@@ -191,9 +193,28 @@ a
 .child
 img
 {
-    height: 10rem;
+    
+    position: absolute;
     width: 10rem;
+    height: 10rem;
+    z-index: -1;
 }
+.container
+.json
+.child .buyanimate
+{   
+    
+    position: relative;
+    font-size: 0.9rem;
+    color:white;
+    transform: rotate(-45deg);
+    left: -3.5rem;
+    top: -8rem;
+    background: red;
+    font-weight: 400;
+    
+}
+
 
 
 /*funciono?*/
