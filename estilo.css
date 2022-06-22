@@ -395,16 +395,7 @@ li
                                     {
                                         font-weight: 700;
                                     }
-                                    .listacompra 
-                                    button
-                                    {
-                                        font-weight: 600;
-                                        font-size: 1rem;
-                                        justify-content: center;
-                                        align-items: center;
-                                        border-radius: 50%;
-                                        margin-left: 0.5rem;
-                                    }
+                                   
                                    
 
 
@@ -432,6 +423,23 @@ li
                                     background: rgb(11, 67, 14);
                                 
                                 }
+                                .listacompra 
+                                button
+                                {
+                                    font-weight: 600;
+                                    font-size: 1rem;
+                                    justify-content: center;
+                                    align-items: center;
+                                    
+                                    margin-left: 0.5rem;
+                                }
+                                .listacompra 
+                                .tdbuttons
+                                {   
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 0.3rem;
+                                }
 
 /*BOTONES */
 .btnTerminarCompra,
@@ -456,8 +464,13 @@ li
 
                                     .total 
                                     text
-                                    {
+                                    {   
+                                        display: flex;
+                                        font-size: 1.5rem;
                                         font-weight: 600;
+                                        text-align: center;
+                                        justify-content: center;
+
                                     }
 #datosContacto 
 {
