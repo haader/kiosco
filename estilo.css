@@ -177,28 +177,69 @@ a
     display: flex;
     flex-direction: column;
     width: 10rem;
-    height: 10rem;
-    padding: 0.5rem;
+    height: 12rem;
     text-align: center;
     border: 1px solid orange;
 }
-.container
-.json
-.child:hover
-{
-    border: 1px solid black;
-}
+                            .container
+                            .json
+                            .child:hover
+                            {
+                                border: 1px solid black;
+                            }
+
 .container
 .json
 .child
-img
-{
-    
-    position: absolute;
-    width: 10rem;
-    height: 10rem;
-    z-index: -1;
+h3{
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+    padding: 0;
 }
+
+.container
+.json
+.child
+div
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    top: 80%;
+    height: 2rem;   
+    width: 100%;
+    background: rgb(255, 255, 255);
+    
+}
+
+.container
+.json
+.child
+button
+{
+    width: 100%;
+    background: chocolate;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+    
+
+
+    .container
+    .json
+    .child
+    img
+    {
+        
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        z-index: 0;
+    }
+
+                        
 .container
 .json
 .child .buyanimate
@@ -208,8 +249,8 @@ img
     font-size: 0.9rem;
     color:white;
     transform: rotate(-45deg);
-    left: -3.5rem;
-    top: -8rem;
+    left: -3rem;
+    top: -0.5rem;
     background: red;
     font-weight: 400;
     

@@ -22,7 +22,7 @@ var id=0;
 /*dom: creo la lista de productos */
 /*dom: creo la lista de productos */
 myProduc.forEach(element => {
-    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><h3 id="cid'+cont+'">Costo: '+myProduc[cont].precio+'$</h3><button " onclick="comprar('+cont+')">Comprar</button></div>';    
+    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><div><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><button " onclick="comprar('+cont+')">Comprar '+myProduc[cont].precio+'$</button></div></div>';    
     
     cont++;
 });
