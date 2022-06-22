@@ -97,7 +97,7 @@ function comprar(id){/*es apretado en las cards (cartas para comprar) y en el bt
 
     if(uni==0){
         myProduc[id].unidades++;
-        document.getElementById("listacompra").innerHTML+='<tr id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">agregar</button></td></tr>';
+        document.getElementById("listacompra").innerHTML+='<tr id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td><button class="btnEliminar" onclick="NOcomprar('+id+')">-</button><button class="btnAgregar" onclick="comprar('+id+')">+</button></td></tr>';
         sumarSubTotal(id);
         array.push(id);
         console.log(array);
