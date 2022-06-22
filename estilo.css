@@ -263,6 +263,7 @@ button
 .containerPanel
 {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: flex-start;
     position: fixed;
@@ -270,8 +271,6 @@ button
     top: 2rem;
     z-index: 2;
     height: 100%;
-    opacity: 0.5;
-    transition: 0.5s;
     transform: translateX(90%);
     transition: 0.5s;
 }                                
@@ -279,19 +278,12 @@ button
                                     .containerLista{
                                         visibility: hidden;
                                         background: orange;
+                                        margin-left: 1rem;
                                         height: 100%;
                                         opacity: 0.25;
                                         transition: 0.5s;                                      
                                     }
-                                    .containerPanel
-                                    .iconChango:hover 
-                                    ~.containerLista,
-                                    .containerPanel
-                                    .containerLista:hover{
-                                        visibility: visible;
-                                        opacity: 1;  
-                                        
-                                    }
+                                  
 
 .containerPanel 
 .iconChango

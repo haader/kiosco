@@ -1,6 +1,7 @@
 productos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
 
 /*VARIABLES!!! */
+let booleanCarrrito=false;
 
 var myProduc = JSON.parse(productos);
 let total=0;/*sumatoria de todos los precios*/ 
@@ -228,25 +229,55 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
 }
 /*HOVER EN containerPanel */
                         let padre=document.getElementById("containerPanel");
-                        let child1=document.getElementById("iconChango");
                         let child2=document.getElementById("containerLista");
 
-                        function entra()
-                        {
+                        function entra(){
+
                             padre.style="transform: translateX(0rem);"
                             padre.style.opacity=1;
+                            child2.style.opacity=1;
+                            child2.style.visibility="visible";
+                            child2.style.marginLeft="0.2rem";
+
+                            booleanCarrrito=true;
+                            
                         }
 
                         function sale()
                         {
+                            
                             padre.style="transform: translateX(90%);"
+                            child2.style.opacity=0.5;
+                            child2.style.marginLeft="0.5rem";
+                            booleanCarrrito=false;
                         }
-                        child1.addEventListener("click",entra);
-                        child1.addEventListener("click",sale);
+                        /*
+                        child2.addEventListener("mouseout",sale);
+                        */
+                        
+
+
+
+                        function clickCarrito()
+                        {
+                            switch(booleanCarrrito){
+                                
+                                case false:
+                                            entra();
+
+                                
+                                    break;
+                                
+                                case true:
+                                             sale();
+
+                 
+                                    break;
+                            }
+                            
+                        }
 
                        
-                        child2.addEventListener("mouseover",entra);
-                        child2.addEventListener("mouseout",sale);
 
 function buyanimate(id){
 
