@@ -1,0 +1,31 @@
+<div id="json" class="json">
+            
+    <h2 class="seccion">
+        <span class="iconSeccion">
+            <ion-icon name="beer-outline"></ion-icon>
+        </span>Bebidas</h2>
+   
+</div>
+
+<script>
+
+    /*declaramos el ID=0 (almacen 0 a 100)*/
+        var id=0;
+
+        verduleria = '[{"name" : "verduleria", "precio" : 75, "unidades":0},{"name" : "verduleria", "precio" : 150, "unidades":0},{"name" : "verduleria", "precio" : 200, "unidades":0},{"name" : "verduleria", "precio" : 20, "unidades":0},{"name" : "verduleria", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
+        var myProduc = JSON.parse(verduleria);
+        console.log("verduleria");
+        console.log(myProduc);
+
+        /*dom: creo la lista de lacteos */
+        /*dom: creo la lista de lacteos */
+        cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
+        myProduc.forEach(element => {
+            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><div><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><button " onclick="comprar('+cont+')">Comprar '+myProduc[cont].precio+'$</button></div></div>';    
+            
+            cont++;
+        });
+
+
+
+</script>

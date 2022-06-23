@@ -1,16 +1,14 @@
-lacteos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
 
 /*VARIABLES!!! */
 let booleanCarrrito=false;
 let booleanListaCompra=false;
 
-var myProduc = JSON.parse(lacteos);
 let total=0;/*sumatoria de todos los precios*/ 
 let contador=0;/*cantidad de veces que aparece el producto en la lista */
 
 /*unidades del producto*/
 let subtotal=0; /*contador * precioUnitario */
-cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
+
 let contadorCarrito=0;
 let numero="1155179365";
 let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
@@ -20,15 +18,7 @@ let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
 
 let booleanTerminarCompra=false;
 
-var id=0;
 
-/*dom: creo la lista de lacteos */
-/*dom: creo la lista de lacteos */
-myProduc.forEach(element => {
-    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><div><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><button " onclick="comprar('+cont+')">Comprar '+myProduc[cont].precio+'$</button></div></div>';    
-    
-    cont++;
-});
 
 
 function sumar(id){
@@ -219,6 +209,11 @@ function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
                 }
     
 }
+
+/*GUARDAR VARIABLES PREPARANDO LA URL*/ 
+/*GUARDAR VARIABLES PREPARANDO LA URL*/ 
+/*GUARDAR VARIABLES PREPARANDO LA URL*/ 
+
 
 function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS COLOCA EN UNA URL */
 

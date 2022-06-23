@@ -13,14 +13,14 @@
         <nav>
             <ul>
               
-                <li class="lista">
-                    <a href="#">
+                <li class="lista" id="almacen">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="storefront-outline"></ion-icon></span>
                         <span class="texto">Almacen</span>
                     </a>
                 </li>
-                <li class="lista">
-                    <a href="#">
+                <li class="lista" id="verduleria">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="nutrition-outline"></ion-icon></span>
                         <span class="texto">Verduleria</span>
                     </a>
@@ -28,29 +28,29 @@
 
               
                 
-                <li class="lista">
-                    <a href="#">
+                <li class="lista" id="limpieza">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="archive-outline"></ion-icon></span>
                         <span class="texto">Limpieza</span>
                     </a>
                 </li>
 
-                <li class="lista">
-                    <a href="#">
+                <li class="lista" id="lacteos">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="snow-outline"></ion-icon></span>
                         <span class="texto">Lacteos</span>
                     </a>
                 </li>
 
-                <li class="lista">
-                    <a href="#">
+                <li class="lista" id="bebidas">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="beer-outline"></ion-icon></span>
                         <span class="texto">Bebidas</span>
                     </a>
                 </li>
 
-                <li class="lista">
-                    <a href="factura.html?pro=p a n&can=10&pre=200" target="_blank">
+                <li class="lista" id="otros">
+                    <a href="#containerSeccion">
                         <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
                         <span class="texto">Otros</span>
                     </a>
@@ -87,7 +87,7 @@
                     <text>1.elegir los productos</text>
                 </div>
         </div>
-        <div class="containerSeccion">
+        <div class="containerSeccion" id="containerSeccion">
            
             <div id="json" class="json">
             
@@ -162,6 +162,45 @@
     <!--COLOCAMOS LOS ICONOS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+
+            /*AL HACER CLIC EN #JAVA CARGAMOS LA SECCION JAVA*/
+                $(document).ready(function () {
+
+                    $('#containerSeccion').load('almacen.html');
+
+                    $('#almacen').click(function(){
+                $('#containerSeccion').load('almacen.html');
+                    });                    
+
+                $('#verduleria').click(function(){
+                $('#containerSeccion').load('verduleria.html');
+                    });
+
+                    $('#limpieza').click(function(){
+                $('#containerSeccion').load('limpieza.html');
+                    });
+
+                    $('#lacteos').click(function(){
+                $('#containerSeccion').load('lacteos.html');
+                    });
+
+                    $('#bebidas').click(function(){
+                $('#containerSeccion').load('bebidas.html');
+                    });
+
+                    $('#otros').click(function(){
+                $('#containerSeccion').load('otros.html');
+                    });
+
+
+
+
+                });
+
+    </script>
+
 </body>
 </html>
 <!--
