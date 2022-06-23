@@ -1,27 +1,29 @@
-productos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
+lacteos = '[{"name" : "leche entera", "precio" : 75, "unidades":0},{"name" : "batata", "precio" : 150, "unidades":0},{"name" : "papas", "precio" : 200, "unidades":0},{"name" : "azucar", "precio" : 20, "unidades":0},{"name" : "arroz", "precio" : 70,"unidades":0},{"name":"queso","precio":90,"unidades":0}]';
 
 /*VARIABLES!!! */
 let booleanCarrrito=false;
 let booleanListaCompra=false;
-var myProduc = JSON.parse(productos);
+
+var myProduc = JSON.parse(lacteos);
 let total=0;/*sumatoria de todos los precios*/ 
-let contador=0;/*cantidad de veces que aparece en la lista */
+let contador=0;/*cantidad de veces que aparece el producto en la lista */
+
 /*unidades del producto*/
 let subtotal=0; /*contador * precioUnitario */
-cont=0;
+cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
 let contadorCarrito=0;
 let numero="1155179365";
-let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";
+let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
 let texto="";
 let array=[];
-let saltolinea="+%0A+";
+let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
 
-let booleanTermonarCopra=false;
+let booleanTerminarCompra=false;
 
 var id=0;
 
-/*dom: creo la lista de productos */
-/*dom: creo la lista de productos */
+/*dom: creo la lista de lacteos */
+/*dom: creo la lista de lacteos */
 myProduc.forEach(element => {
     document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./lacteos/Leche Entera.webp" alt=""><div><h3 id="pid'+cont+'">'+myProduc[cont].name+'</h3><button " onclick="comprar('+cont+')">Comprar '+myProduc[cont].precio+'$</button></div></div>';    
     
@@ -142,7 +144,7 @@ function borrarTodo(){
 
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
         document.getElementById("totalid").innerHTML+='<div id="datosContacto"></div>';
-        booleanTermonarCopra=false;
+        booleanTerminarCompra=false;
 
         array=[];
         array2=[];
@@ -174,7 +176,7 @@ function TerminarComprar(){
 
     if(total!==0){
 
-        switch(booleanTermonarCopra){
+        switch(booleanTerminarCompra){
 
             case true:
 
@@ -186,7 +188,7 @@ function TerminarComprar(){
                 document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)"></textArea>';
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         
-                booleanTermonarCopra=true;
+                booleanTerminarCompra=true;
 
                 break;
         }

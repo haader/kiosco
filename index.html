@@ -12,13 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li class="lista">
-                    <a href="compra.html?pro=pan&can=10&pre=200">
-                        
-                        <span class="texto">PROBANDO</span>
-                    </a>
-                </li>
-
+              
                 <li class="lista">
                     <a href="#">
                         <span class="icon"><ion-icon name="storefront-outline"></ion-icon></span>
@@ -54,6 +48,13 @@
                         <span class="texto">Bebidas</span>
                     </a>
                 </li>
+
+                <li class="lista">
+                    <a href="factura.html?pro=p a n&can=10&pre=200" target="_blank">
+                        <span class="icon"><ion-icon name="add-circle-outline"></ion-icon></span>
+                        <span class="texto">Otros</span>
+                    </a>
+                </li>
                 
             </ul>
         </nav>
@@ -86,12 +87,17 @@
                     <text>1.elegir los productos</text>
                 </div>
         </div>
-        <div id="json" class="json">
-            
-            <h2 class="seccion"><span class="iconSeccion"><ion-icon name="storefront-outline"></ion-icon></span>Almacen</h2>
+        <div class="containerSeccion">
            
-        </div>
+            <div id="json" class="json">
+            
+                <h2 class="seccion"><span class="iconSeccion"><ion-icon name="storefront-outline"></ion-icon></span>Almacen</h2>
+               
+            </div>
+    
 
+        </div>
+       
        
        
 
@@ -151,10 +157,20 @@
     
 
     <script type="text/javascript" src="data.json"></script>
-    <script type="text/javascript" src="./logica.js">
-    </script>
+    <script type="text/javascript" src="./logica.js"></script>
+    <script type="text/javascript" src="./jquery.js"></script>
     <!--COLOCAMOS LOS ICONOS-->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+<!--
+
+<li class="lista">
+                    <a href="compra.html?pro=pan&can=10&pre=200" target="_blank">
+                        
+                        <span class="texto">PROBANDO</span>
+                    </a>
+                </li>
+
+-->
