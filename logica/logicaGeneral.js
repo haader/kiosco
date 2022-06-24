@@ -1,117 +1,5 @@
-
-/*VARIABLES!!! */
-let booleanCarrrito=false;
-let booleanListaCompra=false;
-
-let total=0;/*sumatoria de todos los precios*/ 
-let contador=0;/*cantidad de veces que aparece el producto en la lista */
-
-/*unidades del producto*/
-let subtotal=0; /*contador * precioUnitario */
-
-let contadorCarrito=0;
-let numero="1155179365";
-let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
-let texto="";
-let array=[];
-let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
-
-let booleanTerminarCompra=false;
-
-
-
-
-function sumar(id){
-    total+=myProduc[id].precio;
-    document.getElementById("total").innerHTML=total;
-
-    document.getElementById("carritoTotal").innerText=total+"$";
-
-    
-
-}
-
-function restar(id){ 
-
-            total-=myProduc[id].precio;
-            document.getElementById("total").innerHTML=total;
-
-            document.getElementById("carritoTotal").innerText=total+"$";
-}
-
-                                            function sumarSubTotal(id){
-                                                let precio=myProduc[id].precio;
-                                                let calsubtotal=precio*(myProduc[id].unidades);
-                                                document.getElementById("subtotal"+id).innerHTML=calsubtotal+"$";
-                                                
-                                            }
-
-function NOcomprar(id){/*boton eliminar compra */
-
-    contadorCarrito--;
-    document.getElementById("carritoCont").innerHTML=contadorCarrito;
-
-
-    let uni=myProduc[id].unidades;
-
-
-    if(uni==1){
-        myProduc[id].unidades=0;
-        document.getElementById("tablerow"+id).remove();
-        let array2=array.filter((item) => item !== id);
-        console.log(array2);
-        array=[];
-        array2.forEach(element=>{
-            array.push(element);
-        })
-        console.log(array);
-
-        
-
-    }else if(uni>1){
-        myProduc[id].unidades--;
-        document.getElementById("unidades"+id).innerHTML=myProduc[id].unidades;
-        sumarSubTotal(id);    
-    }
-    restar(id);
-
-}
 /* COMPRAR*/
 
-function comprar(id){/*es apretado en las cards (cartas para comprar) y en el btn agregar (lista de compras) */
-    contadorCarrito++;
-    buyanimate(id);
-
-    document.getElementById("carritoCont").innerHTML=contadorCarrito;
-
-    let uni=myProduc[id].unidades;
-
-
-    if(uni==0){
-        myProduc[id].unidades++;
-        /*CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" */
-        if(booleanListaCompra==false){
-            document.getElementById("listacompra").innerHTML+='<tr class="'+booleanListaCompra+'" id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td class="tdbuttons"><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">Agregar</button></td></tr>';
-            booleanListaCompra=true;
-        }else{
-            document.getElementById("listacompra").innerHTML+='<tr class="'+booleanListaCompra+'" id="tablerow'+id+'"><td>'+myProduc[id].name+'</td><td>'+myProduc[id].precio+'$</td><td id="unidades'+id+'">'+myProduc[id].unidades+'</td><td id="subtotal'+id+'">'+subtotal+'$</td><td class="tdbuttons"><button class="btnEliminar" onclick="NOcomprar('+id+')">Eliminar</button><button class="btnAgregar" onclick="comprar('+id+')">Agregar</button></td></tr>';
-            booleanListaCompra=false;
-        }
-        
-        sumarSubTotal(id);
-        array.push(id);
-        console.log(array);
-
-    }else{
-        myProduc[id].unidades++;
-        document.getElementById("unidades"+id).innerHTML=myProduc[id].unidades;
-        sumarSubTotal(id);
-        
-    }
-    
-    sumar(id);
- 
-}
 
 /*boton eliminar todo! */
 
@@ -120,8 +8,8 @@ function borrarTodo(){
     if(total!=0){
         /*eliminamo los indicadores de "seleccionado" */
       
-        [].forEach.call(document.querySelectorAll(".buyanimate"), function(buyanimate){
-            buyanimate.parentNode.removeChild(buyanimate);
+        [].forEach.call(document.querySelectorAll(".TagSeleccionado"), function(TagSeleccionado){
+            TagSeleccionado.parentNode.removeChild(TagSeleccionado);
         });
 
         contadorCarrito=0;
@@ -172,7 +60,7 @@ function TerminarComprar(){
 
                 break;                
             case false:
-
+                
                 document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega"></input>';
                 document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles"></input>';
                 document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)"></textArea>';
@@ -221,6 +109,7 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
     let stringProductos="";
     let stringTotal=saltolinea+"*Total:* *"+total+"*$";
 
+    //array: guarda los id de los productos (el tema es separarlo por seccion)
     array.forEach(element=>{
 
         stringProductos+="-"+myProduc[element].unidades+" *"+myProduc[element].name+"* "+saltolinea;
@@ -284,16 +173,6 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
 
                        
 
-function buyanimate(id){
-
-    try{
-        document.getElementById("buyanimate"+id).remove();
-    }catch{
-
-    }
-    document.getElementById(id).innerHTML+='<span class="buyanimate" id="buyanimate'+id+'">Seleccionado</span>';
-    
-};
 
 /*
 
