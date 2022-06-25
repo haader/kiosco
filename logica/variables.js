@@ -13,7 +13,13 @@ let subtotal=0; /*contador * precioUnitario */
 let contadorCarrito=0;//el valor del carrito
 
 //Compralista
-let Factura=[];
+let Factura0=[];
+let Factura1=[];
+let Factura2=[];
+let Factura3=[];
+let Factura4=[];
+let Factura5=[];
+let Factura6=[];
 
 //whatsapp
 let numero="1155179365";
