@@ -11,7 +11,7 @@
    
 </div>
 
-
+<script src="./json/Carniceria.js"></script>
 <script>
     //declaramos la seccion donde nos encontramos
     seccion=5;
@@ -20,15 +20,15 @@
     var id=0;//empezamos a contar en 0 cada vez que
             //la página es llamada para renderizar los productos de la seccion
     
-    carniceria = '[{"name" : "carne", "precio" : 75, "unidades":0},{"name" : "carne", "precio" : 75, "unidades":0},{"name" : "carne", "precio" : 75, "unidades":0}]';
-    var myCarniceria = JSON.parse(carniceria);
+    
+    var myCarniceria = JSON.parse(Carniceria);
     console.table(myCarniceria);
     
     /*dom: creo la lista de lacteos */
     /*dom: creo la lista de lacteos */
     cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
     myCarniceria.forEach(element => {
-        document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Carniceria/'+myCarniceria[cont].name+'.webp" alt=""><div><h3 id="pid'+cont+'">'+myCarniceria[cont].name+'</h3><button " onclick="comprar5('+cont+')">Comprar '+myCarniceria[cont].precio+'$</button></div></div>';    
+        document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Carniceria/Carniceria.webp" alt=""><div><h3 id="pid'+cont+'">'+myCarniceria[cont].name+'</h3><button " onclick="comprar5('+cont+')">Comprar '+myCarniceria[cont].precio+'$</button></div></div>';    
         cont++;
     });
     

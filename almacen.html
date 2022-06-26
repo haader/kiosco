@@ -10,7 +10,7 @@
    
 </div>
 
-
+<script src="./json/almacen.js"></script>
 <script>
 //declaramos la seccion donde nos encontramos
 seccion=0;
@@ -18,14 +18,14 @@ seccion=0;
 var id=0;//empezamos a contar en 0 cada vez que
         //la página es llamada para renderizar los productos de la seccion
 
-Almacen = '[{"name" : "Almacen", "precio" : 75, "unidades":0},{"name" : "Almacen", "precio" : 375, "unidades":0},{"name" : "Almacen", "precio" : 175, "unidades":0}]';
+
 var myAlmacen = JSON.parse(Almacen);
 
 /*dom: creo la lista de Almacen */
 /*dom: creo la lista de Almacen */
 cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
 myAlmacen.forEach(element => {
-    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Almacen/'+myAlmacen[cont].name+'.webp" alt=""><div><h3 id="pid'+cont+'">'+myAlmacen[cont].name+'</h3><button " onclick="comprar0('+cont+')">Comprar '+myAlmacen[cont].precio+'$</button></div></div>';    
+    document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Almacen/Almacen.webp" alt=""><div><h3 id="pid'+cont+'">'+myAlmacen[cont].name+'</h3><button " onclick="comprar0('+cont+')">Comprar '+myAlmacen[cont].precio+'$</button></div></div>';    
     cont++;
 });
 

@@ -46,11 +46,11 @@
                                     Productos
                                     Precio Unitario
                                     Sub-total
-                                    Estado
+                                    Estado//son btn que cambian el color 
                                     
         los datos que se traen del la URL
                                          tamañoCompra
-                                         cantidad (la canidad de unidades vendidas)
+lo que debo pitar directamente=>=>=>=> cantidad (la canidad de unidades vendidas)
                                          idProducto
                                          tipoProducto
         */                                          
