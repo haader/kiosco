@@ -39,7 +39,28 @@
                 document.getElementById("datosComprador").innerHTML='<h3>Datos del Comprador</h3><h4>Nombre: '+nombre+'</h4><h4>Dirección: '+address+'</h4><h4>Metodo de Pago: Efectivo</h4>';
             }
         }
-//        
+//dependiendo el tipo de producto utilizamos el id proporcionado y pintamos
+switch(tipoProduc){
+    case 0:
+        document.getElementById("listacompra").innerHTML+='<tr id="row'+contador+'"><td>'+myAlmacen[idProducto].name+'</td><td>'+myAlmacen[idProducto].precio+'</td><td>'+cantidad+'$</td><td>'+(myAlmacen[idProducto].precio*cantidad)+'$</td><td><button onclick="ok('+contador+')">ok</button></td></tr>';
+        break;
+    case 1:
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+    case 5:
+        break;
+        
+}
+
+function ok(contador){
+    document.getElementById("row"+contador).style.background="red";
+
+}
 //2-lista de productos comprados 
         /*declaramos funciones que ayudan a obtener: 
 
@@ -54,7 +75,7 @@ lo que debo pitar directamente=>=>=>=> cantidad (la canidad de unidades vendidas
                                          idProducto
                                          tipoProducto
         */                                          
-document.getElementById("listacompra").innerHTML+='<tr><td>'+producto+'</td><td>'+cantidad+'</td><td>'+precio+'$</td><td>'+precio+'$</td><td>'+precio+'$</td></tr>';
+
 //3-total (incluye cuanto paga y vuelto)
 
         
