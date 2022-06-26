@@ -22,13 +22,14 @@ var id=0;//empezamos a contar en 0 cada vez que
         
         otros = '[{"name" : "otros", "precio" : 75, "unidades":0},{"name" : "otros", "precio" : 150, "unidades":0},{"name" : "otros", "precio" : 200, "unidades":0},{"name" : "otros", "precio" : 20, "unidades":0},{"name" : "otros", "precio" : 70,"unidades":0},{"name":"otros","precio":90,"unidades":0}]';
         var myOtros = JSON.parse(otros);
+        console.table(myOtros);
   
 
         /*dom: creo la lista de lacteos */
         /*dom: creo la lista de lacteos */
         cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
         myOtros.forEach(element => {
-            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Otros/'+myOtros[cont].name+'.webp" alt=""><div><h3 id="pid'+cont+'">'+myOtros[cont].name+'</h3><button " onclick="comprar5('+cont+')">Comprar '+myOtros[cont].precio+'$</button></div></div>';    
+            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Otros/'+myOtros[cont].name+'.webp" alt=""><div><h3 id="pid'+cont+'">'+myOtros[cont].name+'</h3><button " onclick="comprar6('+cont+')">Comprar '+myOtros[cont].precio+'$</button></div></div>';    
             
             cont++;
         });
