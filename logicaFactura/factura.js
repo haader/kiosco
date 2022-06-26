@@ -24,7 +24,7 @@
 //modificamos el doom
 //1-datos del comprador (incluye meto de pago y envio)
 
-        if(send==true){//la compra se envia al domicilio
+        if(envio==true){//la compra se envia al domicilio
             
             if(metodoPago=true){//abona por mercado pago
                 document.getElementById("datosComprador").innerHTML='<h3>Datos del Comprador</h3><h4>Nombre: '+nombre+'</h4><h4>Dirección: '+address+'</h4><h4>Metodo de Pago: Mercado Pago</h4>';
