@@ -39,7 +39,7 @@
                 document.getElementById("datosComprador").innerHTML='<h3>Datos del Comprador</h3><h4>Nombre: '+nombre+'</h4><h4>Dirección: '+address+'</h4><h4>Metodo de Pago: Efectivo</h4>';
             }
         }
-        
+//        
 //2-lista de productos comprados 
         /*declaramos funciones que ayudan a obtener: 
 
