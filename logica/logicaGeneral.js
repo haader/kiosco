@@ -87,9 +87,9 @@ function TerminarComprar(){
                 break;                
             case false:
                 
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega"></input>';
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles"></input>';
-                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)"></textArea>';
+                document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
+                document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
+                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         
                 booleanTerminarCompra=true;
@@ -106,6 +106,7 @@ function TerminarComprar(){
 }
 
 function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
+// verifica que haya valores en los input 
 
     let address=document.getElementById("direccion").value;/* direccion */
     let between_streets=document.getElementById("entrecalle").value; /* entre calle */
@@ -135,12 +136,53 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
     let stringProductos="";
     let stringTotal=saltolinea+"*Total:* *"+total+"*$";
 
-    //array: guarda los id de los productos (el tema es separarlo por seccion)
-    array.forEach(element=>{
+    //Factura: guarda los id de los productos (el tema es separarlo por seccion)
+    Factura0.forEach(element=>{
 
-        stringProductos+="-"+myProduc[element].unidades+" *"+myProduc[element].name+"* "+saltolinea;
+        stringProductos+="-"+myAlmacen[element].unidades+" *"+myAlmacen[element].name+"* "+saltolinea;
         
     })
+    console.table(Factura0);
+    Factura1.forEach(element=>{
+
+        stringProductos+="-"+myVerduleria[element].unidades+" *"+myVerduleria[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura1);
+    Factura2.forEach(element=>{
+
+        stringProductos+="-"+myLimpieza[element].unidades+" *"+myLimpieza[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura2);
+    Factura3.forEach(element=>{
+
+        stringProductos+="-"+myLacteos[element].unidades+" *"+myLacteos[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura3);
+    Factura4.forEach(element=>{
+
+        stringProductos+="-"+myBebidas[element].unidades+" *"+myBebidas[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura4);
+    Factura5.forEach(element=>{
+
+        stringProductos+="-"+myCarniceria[element].unidades+" *"+myCarniceria[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura5);
+    Factura6.forEach(element=>{
+
+        stringProductos+="-"+myOtros[element].unidades+" *"+myOtros[element].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura6);
+
+
+
+
 
     whatsapp+="Compraste:"+saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;

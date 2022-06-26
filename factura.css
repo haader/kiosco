@@ -66,11 +66,18 @@ h3
       height: auto;
   }
 
+  .contenedor
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-  .listacompra
+  #tabla
   {
       border: 1px solid red;
-      display: flex;
+      display: block;
       position: relative;
       width: auto;
       height: auto;
@@ -80,31 +87,38 @@ h3
   }
 
   
-  .listacompra
-  .true
-  {
-      background: chocolate;
-  }
-  
-  .listacompra
-  .false
-  {
-      background: orange;
-  }
+                            .listacompra
+                            .true
+                            {
+                                background: chocolate;
+                            }
+                            
+                            .listacompra
+                            .false
+                            {
+                                background: orange;
+                            }
 
- 
-  .listacompra
-  td
-  {
-      border: 1px solid green;
-  }
+                            
+                            .listacompra
+                            td
+                            {
+                                border: 1px solid green;
+                            }
 
-  .listacompra 
-  thead 
-  td
-  {
-      font-weight: 700;
-  }
+                            .listacompra 
+                            thead 
+                            td
+                            {
+                                font-weight: 700;
+                            }
  
- 
+ .total
+ {
+    display: flex;
+    position: relative;
+    border: 2px solid pink;
+    width: auto;
+    font-weight: 600;
+ }
 
