@@ -6,7 +6,8 @@ function comprar0(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myAlmacen[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myAlmacen[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -44,7 +45,8 @@ function comprar0(id){//es apretado en las cards (cartas para comprar) y en el b
         let uni=myVerduleria[id].unidades;//no problem
         
         
-        if(uni==0){
+        sumarCarrito();
+if(uni==0){
             myVerduleria[id].unidades++;
     
             //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -82,7 +84,8 @@ function comprar2(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myLimpieza[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myLimpieza[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -120,7 +123,8 @@ function comprar3(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myLacteos[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myLacteos[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -158,7 +162,8 @@ function comprar4(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myBebidas[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myBebidas[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -196,7 +201,8 @@ function comprar5(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myCarniceria[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myCarniceria[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 
@@ -234,7 +240,8 @@ function comprar6(id){//es apretado en las cards (cartas para comprar) y en el b
     let uni=myOtros[id].unidades;//no problem
     
     
-    if(uni==0){
+    sumarCarrito();
+if(uni==0){
         myOtros[id].unidades++;
 
         //CREACION DELA ROW DE LA SECCIO "LISTA COMPRA" 

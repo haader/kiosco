@@ -8,7 +8,7 @@ function borrarTodo(){
     if(total!=0){
         /*eliminamo los indicadores de "seleccionado" */
       
-        [].forEach.call(document.querySelectorAll(".TagSeleccionado"), function(TagSeleccionado){
+        [].forEach.call(document.querySelectorAll("TagSeleccionado"), function(TagSeleccionado){
             TagSeleccionado.parentNode.removeChild(TagSeleccionado);
         });
 
@@ -24,15 +24,41 @@ function borrarTodo(){
         document.getElementById("totalid").innerHTML+='<div id="datosContacto"></div>';
         booleanTerminarCompra=false;
 
-        array=[];
+        //vaciamos array de lista
+        Factura0=[];
+        Factura1=[];
+        Factura2=[];
+        Factura3=[];
+        Factura4=[];
+        Factura5=[];
+        Factura6=[];
         array2=[];
-        let i=0;
-    
-        myProduc.forEach(element=>{
-            myProduc[i].unidades=0;
-            i++;
+   
+        myAlmacen.forEach((element, index)=>{
+            myAlmacen[index].unidades=0;
         })
-        i=0;
+        myVerduleria.forEach((element, index)=>{
+            myVerduleria[index].unidades=0;
+        })
+        myLimpieza.forEach((element, index)=>{
+            myLimpieza[index].unidades=0;
+        })
+        myLacteos.forEach((element, index)=>{
+            myLacteos[index].unidades=0;
+        })
+        myBebidas.forEach((element, index)=>{
+            myBebidas[index].unidades=0;
+        })
+        myCarniceria.forEach((element, index)=>{
+            myCarniceria[index].unidades=0;
+        })
+        myOtros.forEach((element, index)=>{
+            myOtros[index].unidades=0;
+        })
+       
+
+
+        
     
         total=0;
         document.getElementById("total").innerHTML=total;

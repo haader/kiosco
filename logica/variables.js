@@ -21,6 +21,15 @@ let Factura4=[];
 let Factura5=[];
 let Factura6=[];
 
+//declaramos ArrayVacios
+var myAlmacen=[];
+var myVerduleria=[];
+var myLimpieza=[];
+var myLacteos=[];
+var myCarniceria=[];
+var myBebidas=[];
+var myOtros=[];
+
 //whatsapp
 let numero="1155179365";
 let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
