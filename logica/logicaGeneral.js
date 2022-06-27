@@ -88,8 +88,7 @@ function TerminarComprar(){
             case false:
                 
                 document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
-                document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
+                
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         
                 booleanTerminarCompra=true;
@@ -104,7 +103,12 @@ function TerminarComprar(){
     
     
 }
-
+function detalleEnvio(){
+    
+    document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
+    document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
+    document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
+}
 function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 // verifica que haya valores en los input 
 
