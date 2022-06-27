@@ -148,6 +148,14 @@
                                         <text>Total: <text id="total"></text>$</text>
 
                                         <button class="btnBorrar" id="btnborrarTodo" onclick="borrarTodo()">Borrar Todo</button>
+                                        <br>
+                                        <hr>
+                                        
+                                        <h3>Datos del Comprador</h3>
+                                        <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="nameUsuario" placeholder="ingrese su nombre" value=""></input></div>
+                                        
+                                        <!--RADIO BOTONES-->
+                                        <div class="metodoPago"><h4>Metodo de Pago:</h4><input name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()"><text onclick="PagoCash()">Efectivo</text><input name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()"><text onclick="PagoMP()">Mercado Pago</text></div>
                                         
                                         <button id="btnTerminarCompra" class="btnTerminarCompra" onclick="TerminarComprar()"><a id="link">Terminar Compra</a></button>
 

@@ -73,7 +73,15 @@ function borrarTodo(){
 
 }
 
+/*funcion de radio button */
 
+function PagoMP(){
+alert("pago mp");
+}
+
+function PagoCash(){
+    alert("pago efectivo");
+}
 
 /*ULTIMA SECCION */
 function TerminarComprar(){
@@ -87,8 +95,7 @@ function TerminarComprar(){
                 break;                
             case false:
                 
-                document.getElementById("datosContacto").innerHTML+='<input class="input" id="nameUsuario" placeholder="ingrese su nombre" value=""></input>';
-                document.getElementById("datosContacto").innerHTML+='<div class="metodoPago"><h4>Metodo de Pago:</h4><input name="metodo_pago" type="radio" value="Efectivo"><text>Efectivo</text><input name="metodo_pago" type="radio" value="Mercado Pago"><text>Mercado Pago</text></div>'
+
             
                 document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
         

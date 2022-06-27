@@ -504,7 +504,7 @@ li
                                     }
 
                                     .total 
-                                    text
+                                    text,.total h3,.containerLista h3
                                     {   
                                         display: flex;
                                         font-size: 1.5rem;
@@ -539,21 +539,38 @@ li
     border-radius: 10px;
     margin-top: 1rem;
 }
-#datosContacto 
+
+
+
+.contname{
+    display: flex;
+    justify-content: center;
+}
+.contname
+.input{
+    margin-left: 2rem;
+}
+.total 
+.titlename{
+    font-size: 1rem;
+    display: flex;
+}
+
+.total 
 .metodoPago{
     display: flex;
     align-items: center;   
 }
-#datosContacto 
+.total
 .metodoPago{
     margin-left: 1rem;
 }
-#datosContacto 
+.total
 .metodoPago
 text{
     font-size: 1rem;
 }
-#datosContacto 
+.total
 .metodoPago
 input{
     margin: 0;
