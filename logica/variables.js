@@ -5,6 +5,7 @@ let booleanListaCompra=false;
 
 let total=0;/*sumatoria de todos los precios*/ 
 let contador=0;/*cantidad de veces que aparece el producto en la lista */
+let contadorP=0;//cuenta la cantidad de TIPO de productos distintos
 
 /*unidades del producto*/
 let subtotal=0; /*contador * precioUnitario */

@@ -57,7 +57,7 @@ function borrarTodo(){
         })
        
 
-
+        contadorP=0;//colocamos el contador de TIPO DE PRODUCTOS en cero
         
     
         total=0;
@@ -131,8 +131,18 @@ function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 
 
 function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS COLOCA EN UNA URL */
+  
+//DATOS FACTURA
+StringDatosFacturas="";
+    //obtenemos el CONTADOR (cantidad de TIPOS de productos comprados )
+    StringDatosFacturas="?taco="+contadorP;
+    
+    //obtenemos  nombre la dirección metodo de pago
+    StringDatosFacturas+="&name="+name
+    //cobtenemos el tipo de prod, la cantidad y el id
 
-
+//DATOS WHATSAPP
+    
     let stringProductos="";
     let stringTotal=saltolinea+"*Total:* *"+total+"*$";
 
@@ -185,10 +195,13 @@ function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS 
 
 
     whatsapp+="Compraste:"+saltolinea+saltolinea+stringProductos;
-    whatsapp+=stringTotal;
+    whatsapp+=stringTotal;//String total tiene el salto de linea
     document.getElementById("datosContacto").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
 
 }
+/*HOVER EN containerPanel */
+/*HOVER EN containerPanel */
+/*HOVER EN containerPanel */
 /*HOVER EN containerPanel */
                         let padre=document.getElementById("containerPanel");
                         let child2=document.getElementById("containerLista");

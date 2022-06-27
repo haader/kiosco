@@ -23,6 +23,7 @@ if(uni==0){
         
         calcularSubTotal0(id);
         Factura0.push(id);
+contadorProductoSumar();
         
     
 
@@ -62,6 +63,7 @@ if(uni==0){
             
             calcularSubTotal1(id);
             Factura1.push(id);
+contadorProductoSumar();
             
         
     
@@ -101,6 +103,7 @@ if(uni==0){
         
         calcularSubTotal2(id);
         Factura2.push(id);
+contadorProductoSumar();
         
     
 
@@ -140,6 +143,7 @@ if(uni==0){
         
         calcularSubTotal3(id);
         Factura3.push(id);
+contadorProductoSumar();
         
     
 
@@ -179,6 +183,7 @@ if(uni==0){
         
         calcularSubTotal4(id);
         Factura4.push(id);
+contadorProductoSumar();
         
     
 
@@ -218,6 +223,7 @@ if(uni==0){
         
         calcularSubTotal5(id);
         Factura5.push(id);
+contadorProductoSumar();
         
     
 
@@ -257,6 +263,7 @@ if(uni==0){
         
         calcularSubTotal6(id);
         Factura6.push(id);
+contadorProductoSumar();
         
     
 

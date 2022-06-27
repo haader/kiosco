@@ -8,6 +8,7 @@ function EliminarProducto0(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myAlmacen[id].unidades=0;
          document.getElementById("tablerow0"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura0.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -35,6 +36,7 @@ function EliminarProducto1(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myVerduleria[id].unidades=0;
          document.getElementById("tablerow1"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura1.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -63,6 +65,7 @@ function EliminarProducto2(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myLimpieza[id].unidades=0;
          document.getElementById("tablerow2"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura2.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -92,6 +95,7 @@ function EliminarProducto3(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myLacteos[id].unidades=0;
          document.getElementById("tablerow3"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura3.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -120,6 +124,7 @@ function EliminarProducto4(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myBebidas[id].unidades=0;
          document.getElementById("tablerow4"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura4.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -148,6 +153,7 @@ function EliminarProducto5(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myCarniceria[id].unidades=0;
          document.getElementById("tablerow5"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura5.filter((item) => item !== id);            
                     array2.forEach(element=>{
@@ -176,6 +182,7 @@ function EliminarProducto6(id){/*boton eliminar compra de la LISTA*/
     if(unidadesProducto==1){
         myOtros[id].unidades=0;
          document.getElementById("tablerow6"+id).remove();//eliminamos el ROW de la "lista compra"
+contadorProductoRestar();
         
         let array2=Factura6.filter((item) => item !== id);            
                     array2.forEach(element=>{
