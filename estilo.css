@@ -539,3 +539,23 @@ li
     border-radius: 10px;
     margin-top: 1rem;
 }
+#datosContacto 
+.metodoPago{
+    display: flex;
+    align-items: center;   
+}
+#datosContacto 
+.metodoPago{
+    margin-left: 1rem;
+}
+#datosContacto 
+.metodoPago
+text{
+    font-size: 1rem;
+}
+#datosContacto 
+.metodoPago
+input{
+    margin: 0;
+    margin-left: 2rem;
+}
