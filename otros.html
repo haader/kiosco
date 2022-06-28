@@ -11,7 +11,7 @@
    
 </div>
 
-<script src="./json/Otros.js"></script>
+<script src="./json/otros.js"></script>
 <script>
     //declaramos la seccion donde nos encontramos
     seccion=6;
@@ -26,7 +26,7 @@ var id=0;//empezamos a contar en 0 cada vez que
         /*dom: creo la lista de lacteos */
         cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
         myOtros.forEach(element => {
-            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Otros/Otros.webp" alt=""><div><h3 id="pid'+cont+'">'+myOtros[cont].name+'</h3><button " onclick="comprar6('+cont+')">Comprar '+myOtros[cont].precio+'$</button></div></div>';    
+            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Otros/otros.webp" alt=""><div><h3 id="pid'+cont+'">'+myOtros[cont].name+'</h3><button " onclick="comprar6('+cont+')">Comprar '+myOtros[cont].precio+'$</button></div></div>';    
             
             cont++;
         });

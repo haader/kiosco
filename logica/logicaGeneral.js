@@ -113,7 +113,7 @@ function Continuar(){
             case false:
                 
                 if(envios=true){
-                    document.getElementById("datosContacto").innerHTML+='<h3>Metodos de Entrega</h3><div class="circulo"><text class="texto">recibir en mi domicilio</text></div><div class="circulo"><text class="texto">retirar en el local</text></div>';
+                    document.getElementById("datosContacto").innerHTML+='<h3>Metodos de Entrega</h3><div class="circulo" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div><div class="circulo"><text class="texto">retirar en el local</text></div>';
                 }else{
                    
                 }
@@ -132,11 +132,13 @@ function Continuar(){
     
     
 }
+
+
 function detalleEnvio(){
     
-    document.getElementById("datosContacto").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
-    document.getElementById("datosContacto").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
-    document.getElementById("datosContacto").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
+    document.getElementById("datosDireccion").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
+    document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
+    document.getElementById("datosDireccion").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
 }
 function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 // verifica que haya valores en los input 

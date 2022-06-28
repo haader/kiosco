@@ -27,7 +27,7 @@ var id=0;//empezamos a contar en 0 cada vez que
         /*dom: creo la lista de lacteos */
         cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
         myLimpieza.forEach(element => {
-            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Limpieza/Limpieza.webp" alt=""><div><h3 id="pid'+cont+'">'+myLimpieza[cont].name+'</h3><button " onclick="comprar2('+cont+')">Comprar '+myLimpieza[cont].precio+'$</button></div></div>';    
+            document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Limpieza/limpieza.webp" alt=""><div><h3 id="pid'+cont+'">'+myLimpieza[cont].name+'</h3><button " onclick="comprar2('+cont+')">Comprar '+myLimpieza[cont].precio+'$</button></div></div>';    
             
             cont++;
         });

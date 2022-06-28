@@ -27,7 +27,7 @@
     /*dom: creo la lista de lacteos */
     cont=0;/* contador del JSON (array) GENERA EL ID que se le asigna a la tarjeta */
     myLacteos.forEach(element => {
-        document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Lacteos/Lacteos.webp" alt=""><div><h3 id="pid'+cont+'">'+myLacteos[cont].name+'</h3><button " onclick="comprar3('+cont+')">Comprar '+myLacteos[cont].precio+'$</button></div></div>';    
+        document.getElementById("json").innerHTML+='<div class="child" id="'+cont+'"><img src="./Lacteos/lacteos.webp" alt=""><div><h3 id="pid'+cont+'">'+myLacteos[cont].name+'</h3><button " onclick="comprar3('+cont+')">Comprar '+myLacteos[cont].precio+'$</button></div></div>';    
         cont++;
     });
     
