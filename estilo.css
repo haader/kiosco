@@ -483,7 +483,7 @@ li
                                 }
 
 /*BOTONES */
-.btnTerminarCompra,
+.btnContinuar,
 .btnBorrar
 
 {
@@ -495,7 +495,7 @@ li
     border-radius: 10px;
     background: rebeccapurple;
                                     }
-                                    .btnTerminarCompra:hover,
+                                    .btnContinuar:hover,
                                     .btnBorrar:hover
                                     {
                                        box-shadow: 0 0 4px white;
@@ -513,16 +513,7 @@ li
                                         justify-content: center;
 
                                     }
-#datosContacto 
-{
-    
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 10px;
-}
+
 
 #datosContacto input, #datosContacto textarea
 {
@@ -575,4 +566,46 @@ text{
 input{
     margin: 0;
     margin-left: 2rem;
+}
+
+.abono{
+    width: 4rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.envio
+h3{
+    display: block;
+width: 100%;    
+}
+
+.envio
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.circulo
+{
+    display: flex;
+    border-radius: 50%;
+    background: white;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.envio
+.circulo
+.texto{
+    display: flex;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    color: red;
+    text-align: center;
+    justify-content: center;
 }

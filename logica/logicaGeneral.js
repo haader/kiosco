@@ -21,7 +21,7 @@ function borrarTodo(){
         document.getElementById("datosContacto").remove();
 
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
-        document.getElementById("totalid").innerHTML+='<div id="datosContacto"></div>';
+        document.getElementById("totalid").innerHTML+='<div  class="envio" id="datosContacto"></div>';
         booleanTerminarCompra=false;
 
         //vaciamos array de lista
@@ -66,6 +66,10 @@ function borrarTodo(){
         document.getElementById("carritoTotal").innerText=total+"$";
     
        /* btnTerminarCompra.setAttribute('onClick',"compranull()");*/
+       //limpiamos los metdos de pagos y el vuelto
+        vuelto=0;
+        cash=false;//paga con mercado pago
+        document.getElementById("divabono").innerHTML="";
 
     }else{
         alert("El carrito ya está vacio!");
@@ -76,15 +80,28 @@ function borrarTodo(){
 /*funcion de radio button */
 
 function PagoMP(){
-alert("pago mp");
+
+cash=false;
+document.getElementById("divabono").innerHTML='';
+document.getElementById("inmp").checked =true;
+document.getElementById("incash").checked =false;
 }
 
-function PagoCash(){
-    alert("pago efectivo");
+function PagoCash(){//input "abono"
+    
+    cash=true;
+    document.getElementById("divabono").innerHTML='<text>Pago con:</text ><input class="abono" id="abono" onkeyup="abono()" type="number"></input><text>mi Vuelto sera:</text><input class="abono" disabled id="Mivuelto" value="'+vuelto+'"></input>'
+    document.getElementById("inmp").checked =false;
+    document.getElementById("incash").checked =true;
+    
 }
 
+function abono(){
+    vuelto=document.getElementById("abono").value-total;
+    document.getElementById("Mivuelto").value=vuelto;
+}
 /*ULTIMA SECCION */
-function TerminarComprar(){
+function Continuar(){
 
     if(total!==0){
 
@@ -95,9 +112,13 @@ function TerminarComprar(){
                 break;                
             case false:
                 
-
-            
-                document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';
+                if(envios=true){
+                    document.getElementById("datosContacto").innerHTML+='<h3>Metodos de Entrega</h3><div class="circulo"><text class="texto">recibir en mi domicilio</text></div><div class="circulo"><text class="texto">retirar en el local</text></div>';
+                }else{
+                   
+                }
+                
+               /* document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';*/
         
                 booleanTerminarCompra=true;
 

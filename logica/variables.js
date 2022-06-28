@@ -39,3 +39,8 @@ let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
 
 let booleanTerminarCompra=false;
 let seccion=0;
+
+//
+let vuelto=0;
+let cash=false;//paga con mercado pago
+let envios=true;

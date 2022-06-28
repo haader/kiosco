@@ -155,22 +155,34 @@
                                         <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="nameUsuario" placeholder="ingrese su nombre" value=""></input></div>
                                         
                                         <!--RADIO BOTONES-->
-                                        <div class="metodoPago"><h4>Metodo de Pago:</h4><input name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()"><text onclick="PagoCash()">Efectivo</text><input name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()"><text onclick="PagoMP()">Mercado Pago</text></div>
-                                        
-                                        <button id="btnTerminarCompra" class="btnTerminarCompra" onclick="TerminarComprar()"><a id="link">Terminar Compra</a></button>
+                                        <div class="metodoPago" id="metodoPago">
 
-                                        <button id="btnTerminarCompra" class="btnTerminarCompra" ><a id="link" href="http://127.0.0.1:5500/factura.html?taco=2&name=melina%20narvaez&dir=marcos%20del%20pont%20725&mp=false&send=false&---clp=4&can=1&id=2&---clp=0&can=5&id=2" target="_blank">ir a Factura</a></button>
-                                    
-                                        <br>
-                                        <div id="datosContacto">
+                                            <h4>Metodo de Pago:</h4>
+                                            <input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">
+                                            <text onclick="PagoCash()">Efectivo</text>
+                                            <input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">
+                                            <text onclick="PagoMP()">Mercado Pago</text>
 
                                         </div>
+                                        <div class="metodoPago" id="divabono"></div>
                                         <br>
+                                        <hr>
+                                        <div class="envio" id="datosContacto">
+
+                                        </div>
+
+                                        <button id="btnContinuar" class="btnContinuar" onclick="Continuar()"><a id="link">Continuar</a></button>
+
+                                        
+                                    
                                         <br>
-                                        <br>
+                 
+                                      
                                     </div>
                     
-
+                                    <br>
+                                    <br>
+                                    <br>
         </div>
 
     </div>
@@ -241,7 +253,7 @@
 </body>
 </html>
 <!--
-
+<a style="margin-top: 4rem; width:5rem; height:2rem;"link" href="http://127.0.0.1:5500/factura.html?taco=2&name=melina%20narvaez&dir=marcos%20del%20pont%20725&mp=false&send=false&---clp=4&can=1&id=2&---clp=0&can=5&id=2" target="_blank">ir a Factura</a>
 <li class="lista">
                     <a href="compra.html?pro=pan&can=10&pre=200" target="_blank">
                         
