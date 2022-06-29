@@ -553,12 +553,10 @@ li
 .total 
 .metodoPago{
     display: flex;
-    align-items: center;   
+    align-items: center;
+    justify-content: center;
 }
-.total
-.metodoPago{
-    margin-left: 1rem;
-}
+
 .total
 .metodoPago
 text{

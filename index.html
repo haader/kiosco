@@ -152,17 +152,20 @@
                                         <hr>
                                         
                                         <h3>Datos del Comprador</h3>
-                                        <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="inputnameUsuario" type="text" placeholder="ingrese su nombre" value=""></input></div>
-                                        
+                                        <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="inputnameUsuario" type="text" placeholder="ingrese su nombre" value="" onkeyup="validarNameComprador()"></input></div>
+                                        <br>
+                                        <hr>
                                         <!--RADIO BOTONES-->
                                         <div class="metodoPago" id="metodoPago">
 
-                                            <h4>Metodo de Pago:</h4>
-                                            <input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">
+                                            <h4>Metodo de Pago</h4>
+                                            <!--
+                                                <input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">
                                             <text onclick="PagoCash()">Efectivo</text>
 
                                             <input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">
                                             <text onclick="PagoMP()">Mercado Pago</text>
+                                            -->
 
                                         </div>
                                         <div class="metodoPago" id="divabono"></div>
@@ -170,8 +173,11 @@
                                         <hr>
                                         <div class="envio" id="metodoEntrega">
 
+                                            <h4>Metodos de Entrega</h4>
+
                                         </div>
                                         <br>
+                                        <hr>
                                         <div id="datosDireccion">
 
                                         </div>

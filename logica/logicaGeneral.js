@@ -18,7 +18,7 @@ function borrarTodo(){
     
 
         document.getElementById("listacompra").remove();
-        document.getElementById("metodoEntrega").innerHTML="";
+        document.getElementById("metodoEntrega").innerHTML="<h3>Metodos de Entrega</h3>";
 
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
         booleanTerminarCompra=false;
@@ -85,7 +85,22 @@ function borrarTodo(){
     }
 
 }
+//funcion escuchador INPUT de nameComprador
+function validarNameComprador(){
 
+    if(document.getElementById("inputnameUsuario").value!==""){
+        
+        document.getElementById("metodoPago").innerHTML='<input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">';
+        document.getElementById("metodoPago").innerHTML='<text onclick="PagoCash()">Efectivo</text>';
+
+        document.getElementById("metodoPago").innerHTML='<input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">';
+        document.getElementById("metodoPago").innerHTML='<text onclick="PagoMP()">Mercado Pago</text>';
+
+    }else{
+        document.getElementById("metodoPago").innerHTML="<h4>Metodo de Pago</h4>";
+    }
+
+}
 /*funcion de radio button */
 
 function PagoMP(){
@@ -95,7 +110,7 @@ function PagoMP(){
 
         metodoPago="mp";
         document.getElementById("divabono").innerHTML='';
-        document.getElementById("metodoEntrega").innerHTML='';
+        document.getElementById("metodoEntrega").innerHTML='<h3>Metodos de Entrega</h3>';
         document.getElementById("inmp").checked =true;
         document.getElementById("incash").checked =false;
         booleanTerminarCompra=false;
@@ -120,7 +135,7 @@ function PagoCash(){//input "abono"
     document.getElementById("divabono").innerHTML='<text>Pago con: </text ><input class="abono" id="abono" onkeyup="abono()" type="number" value=0> </input><text> Vuelto :</text><input class="abono" disabled id="Mivuelto" value="'+vuelto+'$"></input>'
     document.getElementById("inmp").checked =false;
     document.getElementById("incash").checked =true;
-    document.getElementById("metodoEntrega").innerHTML='';
+    document.getElementById("metodoEntrega").innerHTML='<h3>Metodos de Entrega</h3>';
     booleanTerminarCompra=false;
 
 
@@ -190,7 +205,7 @@ function pintarContinuar(){
         case false:
             
             if(envios=true){
-                document.getElementById("metodoEntrega").innerHTML+='<h3>Metodos de Entrega</h3>';
+                
                 document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div>';
                 document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="iralLocal()"><text class="texto">retirar en el local</text></div>';
             }else{
@@ -217,7 +232,9 @@ function iralLocal(){
 function detalleEnvio(){
     
     if(booleanDomicilio==false){
-        
+    
+        document.getElementById("datosDireccion").innerHTML+='<hr>';
+    document.getElementById("datosDireccion").innerHTML+='<h4>Datos de Entrega</h4>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
     document.getElementById("datosDireccion").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
