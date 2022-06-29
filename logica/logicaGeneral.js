@@ -326,20 +326,20 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     StringDatosFacturas="?taco="+contadorP;
     
     //obtenemos  nombre la dirección metodo de pago
-    StringDatosFacturas+="&nam="+nameComprador;
+    StringDatosFacturas+="%26name="+nameComprador;
 
     //HAY ENVIO A DOMICILIO??
     if((envios==true)&(booleanEnvios==true)){
-        StringDatosFacturas+="&send="+true;
-        StringDatosFacturas+="&dir="+address;
+        StringDatosFacturas+="%26send="+true;
+        StringDatosFacturas+="%26dir="+address;
 
     }else{
-        StringDatosFacturas+="&send="+false;
+        StringDatosFacturas+="%26send="+false;
     }
     if(metodoPago=="mp"){
-        StringDatosFacturas+="&mp=true";
+        StringDatosFacturas+="%26mp=true";
     }else if(metodoPago=="cash"){
-        StringDatosFacturas+="&mp=false";
+        StringDatosFacturas+="%26mp=false";
     }
       
     //VAMOS A RECORRER LAS FACTURAS y agregamos los valores a StringDatosFacturas
@@ -446,45 +446,45 @@ function recorrerFacturasWhatsapp(){
 function recorrerFacturas(){
 
     Factura0.forEach((index)=>{
-        StringDatosFacturas+="&---clp=0";
-        StringDatosFacturas+="&can="+myAlmacen[Factura0[index]].unidades;
-        StringDatosFacturas+="&id="+Factura0[index];
+        StringDatosFacturas+="%26---clp=0";
+        StringDatosFacturas+="%26can="+myAlmacen[Factura0[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura0[index];
     })
 
     Factura1.forEach((index)=>{
-        StringDatosFacturas+="&---clp=1";
-        StringDatosFacturas+="&can="+myVerduleria[Factura1[index]].unidades;
-        StringDatosFacturas+="&id="+Factura1[index];
+        StringDatosFacturas+="%26---clp=1";
+        StringDatosFacturas+="%26can="+myVerduleria[Factura1[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura1[index];
     })
 
     Factura2.forEach((index)=>{
-        StringDatosFacturas+="&---clp=2";
-        StringDatosFacturas+="&can="+myLimpieza[Factura2[index]].unidades;
-        StringDatosFacturas+="&id="+Factura2[index];
+        StringDatosFacturas+="%26---clp=2";
+        StringDatosFacturas+="%26can="+myLimpieza[Factura2[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura2[index];
     })
 
     Factura3.forEach((index)=>{
-        StringDatosFacturas+="&---clp=3";
-        StringDatosFacturas+="&can="+myLacteos[Factura3[index]].unidades;
-        StringDatosFacturas+="&id="+Factura3[index];
+        StringDatosFacturas+="%26---clp=3";
+        StringDatosFacturas+="%26can="+myLacteos[Factura3[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura3[index];
     })
 
     Factura4.forEach((index)=>{
-        StringDatosFacturas+="&---clp=4";
-        StringDatosFacturas+="&can="+myBebidas[Factura4[index]].unidades;
-        StringDatosFacturas+="&id="+Factura4[index];
+        StringDatosFacturas+="%26---clp=4";
+        StringDatosFacturas+="%26can="+myBebidas[Factura4[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura4[index];
     })
 
     Factura5.forEach((index)=>{
-        StringDatosFacturas+="&---clp=5";
-        StringDatosFacturas+="&can="+myCarniceria[Factura5[index]].unidades;
-        StringDatosFacturas+="&id="+Factura5[index];
+        StringDatosFacturas+="%26---clp=5";
+        StringDatosFacturas+="%26can="+myCarniceria[Factura5[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura5[index];
     })
 
     Factura6.forEach((index)=>{
-        StringDatosFacturas+="&---clp=6";
-        StringDatosFacturas+="&can="+myOtros[Factura6[index]].unidades;
-        StringDatosFacturas+="&id="+Factura6[index];
+        StringDatosFacturas+="%26---clp=6";
+        StringDatosFacturas+="%26can="+myOtros[Factura6[index]].unidades;
+        StringDatosFacturas+="%26id="+Factura6[index];
     })
 }
 
