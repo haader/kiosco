@@ -77,7 +77,7 @@ function borrarTodo(){
 
         //limpiamos los datosDireccion
         
-        booleanDomicilio=false;
+        booleanPanelDatosDomicilio=false;
 
         //opacidad del btn CONTINUAR
         document.getElementById("btnContinuar").style.opacity="0.3";
@@ -129,7 +129,7 @@ function PagoMP(){
 
     nameComprador=document.getElementById("inputnameUsuario").value;
     document.getElementById("datosDireccion").innerHTML="";
-    booleanDomicilio=false;
+    booleanPanelDatosDomicilio=false;
     if(nameComprador!=""&total!=0){
 
         metodoPago="mp";
@@ -154,7 +154,7 @@ function PagoCash(){//input "abono"
     
     nameComprador=document.getElementById("inputnameUsuario").value;
     document.getElementById("datosDireccion").innerHTML="";
-    booleanDomicilio=false;
+    booleanPanelDatosDomicilio=false;
     if((nameComprador!="")&&(total!=0)){
         
         metodoPago="cash";
@@ -191,7 +191,7 @@ function abono(){
 /*ULTIMA SECCION */
 function Continuar(){
 
-    nameComprador=document.getElementById("inputnameUsuario").value;
+    nameComprador=document.getElementById("inputnameUsuario").value;//nombre del usuario
   
 
     if((total!==0)&(nameComprador!=="")&(metodoPago!=="indefinido")){
@@ -218,14 +218,17 @@ function Continuar(){
         alert("otro problema");
     }
     
-    
 }
+
+
 
 function pintarContinuar(){
     switch(booleanTerminarCompra){
 
         case true:
 
+            enviosContinuar();
+                
             break;                
         case false:
             
@@ -234,8 +237,10 @@ function pintarContinuar(){
                 document.getElementById("metodoEntrega").innerHTML='<h3>Metodos de Entrega</h3>'
                 document.getElementById("metodoEntrega").innerHTML+='<div class="circuloCasa" id="idcirculoCasa" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div>';
                 document.getElementById("metodoEntrega").innerHTML+='<div class="circuloLocal" id="idcirculoLocal" onclick="iralLocal()"><text class="texto">retirar en el local</text></div>';
+                
+                document.getElementById("btnContinuar").style.opacity="0.3";
             }else{
-               
+               //ACA COLOCAMOS SI envio=false
             }
             
            /* document.getElementById("metodoEntrega").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';*/
@@ -246,33 +251,52 @@ function pintarContinuar(){
     }
 }
 
+function enviosContinuar(){
+    switch(booleanPanelDatosDomicilio){
+        
+        case true:
+                //alert("tomamos las variables que se ingresen y las enviamos");
+                guardarDatosEnvio();
+                //guardarDatos();
 
+         //guardarDatosEnvio() tiene incluido GUARDAR DATOS() dentro IMPORTANTE!!!
+            break;
+        case false:
+                //alert("No se envia a la casa, lo pasa a buscar");
+                guardarDatos();
+            break;
+    }
+}
 
 //funciones que suceden botones circulares ELEGIR ENVIO
 function iralLocal(){
     document.getElementById("datosDireccion").innerHTML="";
-    booleanDomicilio=false;
+    booleanPanelDatosDomicilio=false;//hace referencia al panel de datos nada mas
+    booleanEnvios=true;//declaro que NO hay datos de domicilio
     //pintamos el btn de color permanente
     document.getElementById("idcirculoLocal").className+=" activo";
     document.getElementById("idcirculoCasa").className="circuloCasa";
+    document.getElementById("btnContinuar").style.opacity="1";
     //creamosun btn para terminar pedido
 
 }
 
 function detalleEnvio(){
     
-    if(booleanDomicilio==false){
+    if(booleanPanelDatosDomicilio==false){
     
         document.getElementById("idcirculoCasa").className+=" activo";
         document.getElementById("idcirculoLocal").className="circuloLocal";
+        document.getElementById("btnContinuar").style.opacity="1";
 
     document.getElementById("datosDireccion").innerHTML+='<h3>Datos de Entrega</h3>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
-    document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
+    document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalles" placeholder="Entre calles" value="ruta 210"></input>';
     document.getElementById("datosDireccion").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
     document.getElementById("datosDireccion").innerHTML+='<hr>';
 
-           booleanDomicilio=true;
+           booleanEnvios=true;//declaro que hay datos de domicilio
+           booleanPanelDatosDomicilio=true;
     }else{
 
         
@@ -280,26 +304,10 @@ function detalleEnvio(){
 }
 
 //terminamos el pedido
+//terminamos el pedido
+//terminamos el pedido
 
-function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
-// verifica que haya valores en los input 
 
-    let address=document.getElementById("direccion").value;/* direccion */
-    let between_streets=document.getElementById("entrecalle").value; /* entre calle */
-    let description=document.getElementById("detalles").value; /* descripcion */
-    
-
-                if(address==""||between_streets==""||description==""){
-
-                    alert("por favor ingrese los dato solicitados");
-
-                }else{
-                    
-                    guardarDatos();
-
-                }
-    
-}
 
 /*GUARDAR VARIABLES PREPARANDO LA URL*/ 
 /*GUARDAR VARIABLES PREPARANDO LA URL*/ 
@@ -309,13 +317,33 @@ function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 function guardarDatos(){   /* GUARDA LOS DATO DE LAS DIFERENTES VARIABLES Y LOS COLOCA EN UNA URL */
   
 //DATOS FACTURA
-StringDatosFacturas="";
+StringDatosFacturas="";//vaciamos el string por las dudas
+
     //obtenemos el CONTADOR (cantidad de TIPOS de productos comprados )
     StringDatosFacturas="?taco="+contadorP;
     
     //obtenemos  nombre la dirección metodo de pago
-    StringDatosFacturas+="&name="+name
-    //cobtenemos el tipo de prod, la cantidad y el id
+    StringDatosFacturas+="&name="+nameComprador;
+
+    //HAY ENVIO A DOMICILIO??
+    if((envios==true)&(booleanEnvios==true)){
+        StringDatosFacturas+="&send="+true;
+        StringDatosFacturas+="&dir="+address;
+
+    }else{
+        StringDatosFacturas+="&send="+false;
+    }
+    if(metodoPago=="mp"){
+        StringDatosFacturas+="&mp=true";
+    }else if(metodoPago=="cash"){
+        StringDatosFacturas+="&mp=false";
+    }
+      
+    //VAMOS A RECORRER LAS FACTURAS y agregamos los valores a StringDatosFacturas
+        recorrerFacturas();
+    
+    //obtenemos el tipo de prod, la cantidad y el id
+    //debemos usar un forech?
 
 //DATOS WHATSAPP
     
@@ -375,6 +403,76 @@ StringDatosFacturas="";
     document.getElementById("metodoEntrega").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
 
 }
+
+function guardarDatosEnvio(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
+// verifica que haya valores en los input 
+address=document.getElementById("direccion").value;/* direccion */
+between_streets=document.getElementById("entrecalles").value; /* entre calle */
+description=document.getElementById("detalles").value; /* descripcion */
+   
+    
+
+                if(address==""||between_streets==""||description==""){
+
+                    alert("Para que podamos entregarle su compra en su domicilio necesitamos que complete los datos requeridos");
+
+                }else{
+                    
+                    //concatenamos los valores de los input a la URL
+
+                    guardarDatos();
+
+                }
+    
+}
+
+
+function recorrerFacturas(){
+
+    Factura0.forEach((index)=>{
+        StringDatosFacturas+="&---clp=0";
+        StringDatosFacturas+="&can="+myAlmacen[Factura0[index]].unidades;
+        StringDatosFacturas+="&id="+Factura0[index];
+    })
+
+    Factura1.forEach((index)=>{
+        StringDatosFacturas+="&---clp=1";
+        StringDatosFacturas+="&can="+myVerduleria[Factura1[index]].unidades;
+        StringDatosFacturas+="&id="+Factura1[index];
+    })
+
+    Factura2.forEach((index)=>{
+        StringDatosFacturas+="&---clp=2";
+        StringDatosFacturas+="&can="+myLimpieza[Factura2[index]].unidades;
+        StringDatosFacturas+="&id="+Factura2[index];
+    })
+
+    Factura3.forEach((index)=>{
+        StringDatosFacturas+="&---clp=3";
+        StringDatosFacturas+="&can="+myLacteos[Factura3[index]].unidades;
+        StringDatosFacturas+="&id="+Factura3[index];
+    })
+
+    Factura4.forEach((index)=>{
+        StringDatosFacturas+="&---clp=4";
+        StringDatosFacturas+="&can="+myBebidas[Factura4[index]].unidades;
+        StringDatosFacturas+="&id="+Factura4[index];
+    })
+
+    Factura5.forEach((index)=>{
+        StringDatosFacturas+="&---clp=5";
+        StringDatosFacturas+="&can="+myCarniceria[Factura5[index]].unidades;
+        StringDatosFacturas+="&id="+Factura5[index];
+    })
+
+    Factura6.forEach((index)=>{
+        StringDatosFacturas+="&---clp=6";
+        StringDatosFacturas+="&can="+myOtros[Factura6[index]].unidades;
+        StringDatosFacturas+="&id="+Factura6[index];
+    })
+}
+
+
 /*HOVER EN containerPanel */
 /*HOVER EN containerPanel */
 /*HOVER EN containerPanel */

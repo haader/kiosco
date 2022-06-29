@@ -52,7 +52,14 @@ let nameComprador="";
 let vuelto=0;
 let metodoPago="indefinido";//metodo de pago no definido
 let envios=true;
-let booleanDomicilio=false;
+let booleanPanelDatosDomicilio=false;//hace referencia al panel (esta invertido), ebvita que se creen multiples paneles
 
 let metodoEntrega="indefinido";
 
+//terminar pedido
+let StringDatosFacturas="";//contiene los datos de la URL
+
+let booleanEnvios=false;
+let address;
+let between_streets;
+let description;
