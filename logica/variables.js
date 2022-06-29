@@ -32,7 +32,7 @@ var myBebidas=[];
 var myOtros=[];
 
 //whatsapp
-let numero="1155179365";
+let numero="1168160790";
 let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
 let texto="";
 let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
@@ -63,3 +63,6 @@ let booleanEnvios=false;
 let address;
 let between_streets;
 let description;
+
+let linkFactura="http://127.0.0.1:5500/factura.html"
+let linkFacturaGitHub="http://127.0.0.1:5500/factura.html"

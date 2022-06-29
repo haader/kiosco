@@ -256,13 +256,16 @@ function enviosContinuar(){
         
         case true:
                 //alert("tomamos las variables que se ingresen y las enviamos");
+                console.log("booleanPanelDatosDomicilio="+booleanPanelDatosDomicilio);
                 guardarDatosEnvio();
+                
                 //guardarDatos();
 
          //guardarDatosEnvio() tiene incluido GUARDAR DATOS() dentro IMPORTANTE!!!
             break;
         case false:
                 //alert("No se envia a la casa, lo pasa a buscar");
+                console.log("booleanPanelDatosDomicilio="+booleanPanelDatosDomicilio);
                 guardarDatos();
             break;
     }
@@ -323,7 +326,7 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     StringDatosFacturas="?taco="+contadorP;
     
     //obtenemos  nombre la dirección metodo de pago
-    StringDatosFacturas+="&name="+nameComprador;
+    StringDatosFacturas+="&nam="+nameComprador;
 
     //HAY ENVIO A DOMICILIO??
     if((envios==true)&(booleanEnvios==true)){
@@ -340,7 +343,8 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     }
       
     //VAMOS A RECORRER LAS FACTURAS y agregamos los valores a StringDatosFacturas
-        recorrerFacturas();
+        
+    recorrerFacturas(); //tenemos a StringDatosFacturas (SUPER CARGADOS)
     
     //obtenemos el tipo de prod, la cantidad y el id
     //debemos usar un forech?
@@ -351,56 +355,14 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     let stringTotal=saltolinea+"*Total:* *"+total+"*$";
 
     //Factura: guarda los id de los productos (el tema es separarlo por seccion)
-    Factura0.forEach(element=>{
+    //recorrerFacturasWhatsapp();
 
-        stringProductos+="-"+myAlmacen[element].unidades+" *"+myAlmacen[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura0);
-    Factura1.forEach(element=>{
+    linkFactura+=StringDatosFacturas;
 
-        stringProductos+="-"+myVerduleria[element].unidades+" *"+myVerduleria[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura1);
-    Factura2.forEach(element=>{
-
-        stringProductos+="-"+myLimpieza[element].unidades+" *"+myLimpieza[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura2);
-    Factura3.forEach(element=>{
-
-        stringProductos+="-"+myLacteos[element].unidades+" *"+myLacteos[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura3);
-    Factura4.forEach(element=>{
-
-        stringProductos+="-"+myBebidas[element].unidades+" *"+myBebidas[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura4);
-    Factura5.forEach(element=>{
-
-        stringProductos+="-"+myCarniceria[element].unidades+" *"+myCarniceria[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura5);
-    Factura6.forEach(element=>{
-
-        stringProductos+="-"+myOtros[element].unidades+" *"+myOtros[element].name+"* "+saltolinea;
-        
-    })
-    console.table(Factura6);
-
-
-
-
-
-    whatsapp+="Compraste:"+saltolinea+saltolinea+stringProductos;
+    whatsapp+=linkFactura;
+    //whatsapp+=saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;//String total tiene el salto de linea
-    document.getElementById("metodoEntrega").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
+    document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
 
 }
 
@@ -424,6 +386,54 @@ description=document.getElementById("detalles").value; /* descripcion */
 
                 }
     
+}
+
+function recorrerFacturasWhatsapp(){
+    Factura0.forEach((index)=>{
+
+        stringProductos+="-"+myAlmacen[Factura0[index]].unidades+" *"+myAlmacen[Factura0[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura0);
+    Factura1.forEach((index)=>{
+
+        stringProductos+="-"+myVerduleria[Factura1[index]].unidades+" *"+myVerduleria[Factura1[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura1);
+    Factura2.forEach((index)=>{
+
+        stringProductos+="-"+myLimpieza[Factura2[index]].unidades+" *"+myLimpieza[Factura2[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura2);
+    Factura3.forEach((index)=>{
+
+        stringProductos+="-"+myLacteos[Factura3[index]].unidades+" *"+myLacteos[Factura3[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura3);
+    Factura4.forEach((index)=>{
+
+        stringProductos+="-"+myBebidas[Factura4[index]].unidades+" *"+myBebidas[Factura4[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura4);
+    Factura5.forEach((index)=>{
+
+        stringProductos+="-"+myCarniceria[Factura5[index]].unidades+" *"+myCarniceria[Factura5[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura5);
+    Factura6.forEach((index)=>{
+
+        stringProductos+="-"+myOtros[Factura6[index]].unidades+" *"+myOtros[Factura6[index]].name+"* "+saltolinea;
+        
+    })
+    console.table(Factura6);
+
+
+
 }
 
 
