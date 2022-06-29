@@ -589,7 +589,7 @@ width: 100%;
     justify-content: space-around;
     
 }
-.circulo
+.circuloCasa,.circuloLocal
 {
     display: flex;
     border-radius: 50%;
@@ -601,7 +601,10 @@ width: 100%;
     border: 1px solid black;
 }
 .envio
-.circulo
+.circuloCasa
+.texto,
+.envio
+.circuloLocal
 .texto{
     display: flex;
     position: relative;
@@ -611,15 +614,43 @@ width: 100%;
     
 }
                     .envio
-                    .circulo:hover{
+                    .circuloCasa:hover,
+                    .envio
+                    .circuloLocal:hover{
                         background: green;
                     }
                     .envio
-                    .circulo:hover
+                    .circuloCasa:hover
+                    .texto,
+                    .envio
+                    .circuloLocal:hover
                     .texto{
                         color: white;
 
                     }
+
+                    /*circulo CASA y Local ACTIVO*/
+
+                    .envio
+                    .circuloCasa.activo,
+                    .envio
+                    .circuloLocal.activo{
+                        background: green;
+                    }
+                    .envio
+                    .circuloCasa.activo
+                    .texto,
+                    .envio
+                    .circuloLocal.activo
+                    .texto{
+                        color: white;
+
+                    }
+
+
+
+
+
 #datosDireccion{
     display: flex;
     flex-direction: column;

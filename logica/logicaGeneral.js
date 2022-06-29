@@ -5,6 +5,7 @@
 
 function borrarTodo(){
 
+    
     if(total!=0){
         /*eliminamo los indicadores de "seleccionado" */
       
@@ -67,8 +68,10 @@ function borrarTodo(){
        //limpiamos los metdos de pagos y el vuelto
         vuelto=0;
         metodoPago="indefinido";//No establecido
+        if(booleanEstado==true){
         document.getElementById("inmp").checked =false;
         document.getElementById("incash").checked =false;
+        }
 
         
 
@@ -125,6 +128,8 @@ if(booleanEstado==false){
 function PagoMP(){
 
     nameComprador=document.getElementById("inputnameUsuario").value;
+    document.getElementById("datosDireccion").innerHTML="";
+    booleanDomicilio=false;
     if(nameComprador!=""&total!=0){
 
         metodoPago="mp";
@@ -148,6 +153,8 @@ function PagoMP(){
 function PagoCash(){//input "abono"
     
     nameComprador=document.getElementById("inputnameUsuario").value;
+    document.getElementById("datosDireccion").innerHTML="";
+    booleanDomicilio=false;
     if((nameComprador!="")&&(total!=0)){
         
         metodoPago="cash";
@@ -225,8 +232,8 @@ function pintarContinuar(){
             if(envios=true){
 
                 document.getElementById("metodoEntrega").innerHTML='<h3>Metodos de Entrega</h3>'
-                document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div>';
-                document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="iralLocal()"><text class="texto">retirar en el local</text></div>';
+                document.getElementById("metodoEntrega").innerHTML+='<div class="circuloCasa" id="idcirculoCasa" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div>';
+                document.getElementById("metodoEntrega").innerHTML+='<div class="circuloLocal" id="idcirculoLocal" onclick="iralLocal()"><text class="texto">retirar en el local</text></div>';
             }else{
                
             }
@@ -245,14 +252,20 @@ function pintarContinuar(){
 function iralLocal(){
     document.getElementById("datosDireccion").innerHTML="";
     booleanDomicilio=false;
+    //pintamos el btn de color permanente
+    document.getElementById("idcirculoLocal").className+=" activo";
+    document.getElementById("idcirculoCasa").className="circuloCasa";
     //creamosun btn para terminar pedido
+
 }
 
 function detalleEnvio(){
     
     if(booleanDomicilio==false){
     
-        
+        document.getElementById("idcirculoCasa").className+=" activo";
+        document.getElementById("idcirculoLocal").className="circuloLocal";
+
     document.getElementById("datosDireccion").innerHTML+='<h3>Datos de Entrega</h3>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
