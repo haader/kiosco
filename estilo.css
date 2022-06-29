@@ -495,6 +495,9 @@ li
     border-radius: 10px;
     background: rebeccapurple;
                                     }
+.btnContinuar{
+    opacity: 0.3;
+}
                                     .btnContinuar:hover,
                                     .btnBorrar:hover
                                     {
@@ -586,6 +589,7 @@ width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    
 }
 .circulo
 {
@@ -606,8 +610,7 @@ width: 100%;
     font-size: 1rem;
     font-weight: 500;
     color: red;
-    text-align: center;
-    justify-content: center;
+    
 }
                     .envio
                     .circulo:hover{
@@ -617,8 +620,18 @@ width: 100%;
                     .circulo:hover
                     .texto{
                         color: white;
+
                     }
 #datosDireccion{
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+#datosDireccion
+.input{
+    display: flex;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    
 }

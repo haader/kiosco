@@ -152,7 +152,7 @@
                                         <hr>
                                         
                                         <h3>Datos del Comprador</h3>
-                                        <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="nameUsuario" placeholder="ingrese su nombre" value=""></input></div>
+                                        <div class="contname"><text class="titlename">Nombre:</text><input class="input" id="inputnameUsuario" type="text" placeholder="ingrese su nombre" value=""></input></div>
                                         
                                         <!--RADIO BOTONES-->
                                         <div class="metodoPago" id="metodoPago">
@@ -160,6 +160,7 @@
                                             <h4>Metodo de Pago:</h4>
                                             <input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">
                                             <text onclick="PagoCash()">Efectivo</text>
+
                                             <input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">
                                             <text onclick="PagoMP()">Mercado Pago</text>
 
@@ -167,7 +168,7 @@
                                         <div class="metodoPago" id="divabono"></div>
                                         <br>
                                         <hr>
-                                        <div class="envio" id="datosContacto">
+                                        <div class="envio" id="metodoEntrega">
 
                                         </div>
                                         <br>

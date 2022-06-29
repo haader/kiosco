@@ -18,10 +18,9 @@ function borrarTodo(){
     
 
         document.getElementById("listacompra").remove();
-        document.getElementById("datosContacto").remove();
+        document.getElementById("metodoEntrega").innerHTML="";
 
         document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
-        document.getElementById("totalid").innerHTML+='<div  class="envio" id="datosContacto"></div>';
         booleanTerminarCompra=false;
 
         //vaciamos array de lista
@@ -68,8 +67,18 @@ function borrarTodo(){
        /* btnTerminarCompra.setAttribute('onClick',"compranull()");*/
        //limpiamos los metdos de pagos y el vuelto
         vuelto=0;
-        cash=false;//paga con mercado pago
+        metodoPago="indefinido";//No establecido
+        document.getElementById("inmp").checked =false;
+        document.getElementById("incash").checked =false;
+
         document.getElementById("divabono").innerHTML="";
+
+        //limpiamos los datosDireccion
+        document.getElementById("datosDireccion").innerHTML="";
+        booleanDomicilio=false;
+
+        //opacidad del btn CONTINUAR
+        document.getElementById("btnContinuar").style.opacity="0.3";
 
     }else{
         alert("El carrito ya está vacio!");
@@ -81,65 +90,148 @@ function borrarTodo(){
 
 function PagoMP(){
 
-cash=false;
-document.getElementById("divabono").innerHTML='';
-document.getElementById("inmp").checked =true;
-document.getElementById("incash").checked =false;
+    nameComprador=document.getElementById("inputnameUsuario").value;
+    if(nameComprador!=""&total!=0){
+
+        metodoPago="mp";
+        document.getElementById("divabono").innerHTML='';
+        document.getElementById("metodoEntrega").innerHTML='';
+        document.getElementById("inmp").checked =true;
+        document.getElementById("incash").checked =false;
+        booleanTerminarCompra=false;
+
+        //colorear el boton "CONTINUAR"
+        document.getElementById("btnContinuar").style.opacity="1";
+
+    }else if(total==0){
+        alert("No agregaste productos al carrito!");
+    }else if(nameComprador==""){
+        alert("falta que coloques tu nombre!");
+    }
+        
 }
 
 function PagoCash(){//input "abono"
     
-    cash=true;
-    document.getElementById("divabono").innerHTML='<text>Pago con:</text ><input class="abono" id="abono" onkeyup="abono()" type="number"></input><text>mi Vuelto sera:</text><input class="abono" disabled id="Mivuelto" value="'+vuelto+'"></input>'
+    nameComprador=document.getElementById("inputnameUsuario").value;
+    if((nameComprador!="")&&(total!=0)){
+        
+        metodoPago="cash";
+    document.getElementById("divabono").innerHTML='<text>Pago con: </text ><input class="abono" id="abono" onkeyup="abono()" type="number" value=0> </input><text> Vuelto :</text><input class="abono" disabled id="Mivuelto" value="'+vuelto+'$"></input>'
     document.getElementById("inmp").checked =false;
     document.getElementById("incash").checked =true;
+    document.getElementById("metodoEntrega").innerHTML='';
+    booleanTerminarCompra=false;
+
+
+        abono();
     
+
+    }else if(total==0){
+        alert("No agregaste productos al carrito!");
+    }else if(nameComprador==""){
+        alert("falta que coloques tu nombre!");
+    }
+
 }
 
 function abono(){
     vuelto=document.getElementById("abono").value-total;
-    document.getElementById("Mivuelto").value=vuelto;
+    document.getElementById("Mivuelto").value=vuelto+"$";
+    if(vuelto>=0){
+        document.getElementById("btnContinuar").style.opacity="1";
+    }else{
+        document.getElementById("btnContinuar").style.opacity="0.3";
+    }
 }
+
+
+
 /*ULTIMA SECCION */
 function Continuar(){
 
-    if(total!==0){
+    nameComprador=document.getElementById("inputnameUsuario").value;
+    console.log("Usuario: "+nameComprador);
+    console.log(total+","+vuelto+","+metodoPago+","+nameComprador+",")
 
-        switch(booleanTerminarCompra){
+    if((total!==0)&(nameComprador!=="")&(metodoPago!=="indefinido")){
 
-            case true:
+        if(metodoPago=="mp"){
+            pintarContinuar();
+        }else if((metodoPago=="cash")&(vuelto<=0)){
 
-                break;                
-            case false:
-                
-                if(envios=true){
-                    document.getElementById("datosContacto").innerHTML+='<h3>Metodos de Entrega</h3><div class="circulo" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div><div class="circulo"><text class="texto">retirar en el local</text></div>';
-                }else{
-                   
-                }
-                
-               /* document.getElementById("datosContacto").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';*/
-        
-                booleanTerminarCompra=true;
+            alert("ingrese un valor valido para pagar");
 
-                break;
+        }else if((metodoPago=="cash")&(vuelto>=0)){
+            pintarContinuar();
         }
+        
+        //colocamos la logica si elige MERCADO PAGO O EFECTIVO???
 
-       
-    }else{
+    }else if(total==0){
         alert("El carrito esta vacio!");
+    }else if(nameComprador === ""){
+        alert("Debe ingresar su nombre");
+    }else if(metodoPago=="indefinido"){
+        alert("No se eligio un metodo de pago");
+    }else{
+        alert("otro problema");
     }
     
     
 }
 
+function pintarContinuar(){
+    switch(booleanTerminarCompra){
+
+        case true:
+
+            break;                
+        case false:
+            
+            if(envios=true){
+                document.getElementById("metodoEntrega").innerHTML+='<h3>Metodos de Entrega</h3>';
+                document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="detalleEnvio()"><text class="texto">recibir en mi domicilio</text></div>';
+                document.getElementById("metodoEntrega").innerHTML+='<div class="circulo" onclick="iralLocal()"><text class="texto">retirar en el local</text></div>';
+            }else{
+               
+            }
+            
+           /* document.getElementById("metodoEntrega").innerHTML+='<button id="btnregistrarDatos"onclick="enviarPedidos()" >Registrar Datos</button>';*/
+    
+            booleanTerminarCompra=true;
+
+            break;
+    }
+}
+
+
+
+//funciones que suceden botones circulares ELEGIR ENVIO
+function iralLocal(){
+    document.getElementById("datosDireccion").innerHTML="";
+    booleanDomicilio=false;
+    //creamosun btn para terminar pedido
+}
 
 function detalleEnvio(){
     
+    if(booleanDomicilio==false){
+        
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="direccion" placeholder="Dirección de entrega" value="calle falsa 123"></input>';
     document.getElementById("datosDireccion").innerHTML+='<input class="input" id="entrecalle" placeholder="Entre calles" value="ruta 210"></input>';
     document.getElementById("datosDireccion").innerHTML+='<textArea class="input" id="detalles" placeholder="Descripción del lugar de entrega (Color de pared, Color de rejas ect)" >ss</textArea>';
+    document.getElementById("datosDireccion").innerHTML+='<hr>';
+
+           booleanDomicilio=true;
+    }else{
+
+        
+    }
 }
+
+//terminamos el pedido
+
 function enviarPedidos(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 // verifica que haya valores en los input 
 
@@ -231,7 +323,7 @@ StringDatosFacturas="";
 
     whatsapp+="Compraste:"+saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;//String total tiene el salto de linea
-    document.getElementById("datosContacto").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
+    document.getElementById("metodoEntrega").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido</a>';
 
 }
 /*HOVER EN containerPanel */

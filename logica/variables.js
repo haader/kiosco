@@ -41,6 +41,11 @@ let booleanTerminarCompra=false;
 let seccion=0;
 
 //
+let nameComprador="";
 let vuelto=0;
-let cash=false;//paga con mercado pago
+let metodoPago="indefinido";//metodo de pago no definido
 let envios=true;
+let booleanDomicilio=false;
+
+let metodoEntrega="indefinido";
+
