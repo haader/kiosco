@@ -76,7 +76,7 @@ clipURL(addressURL,"?taco",tamañoCompra);//cortamos de la url el tamaño de com
                 document.getElementById("datosComprador").innerHTML='<h3>Datos del Comprador</h3><h4>Nombre: '+nombre+'</h4><h4>Dirección: '+address+'</h4><h4>Metodo de Pago: Efectivo</h4>';
             }
             
-        }else{//la compra se retira en el LOCAL
+        }else if(envio == "false"){//la compra se retira en el LOCAL
             if(metodoPago == "true"){//abona por mercado pago
                 document.getElementById("datosComprador").innerHTML='<h3>Datos del Comprador</h3><h4>Nombre: '+nombre+'</h4><h4>Retira la compra en el local</h4><h4>Metodo de Pago: Mercado Pago</h4>';
             }else{//abona en efectivo

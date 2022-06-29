@@ -60,10 +60,11 @@ let metodoEntrega="indefinido";
 //terminar pedido
 let StringDatosFacturas="";//contiene los datos de la URL
 
-let booleanEnvios=false;
+let booleanEnvios=false;//SI TRUE EL USUARIO ELIGIO ENVIO A LA CASA
 let address;
 let between_streets;
 let description;
 
 let linkFactura="http://127.0.0.1:5500/factura.html"
 let linkFacturaGitHub="http://haader.github.io/kiosco/factura.html"
+let linkEstado=false;

@@ -90,6 +90,8 @@ function borrarTodo(){
         reseteardiv();//reseteamos los div "metodo de pago, div abono, entrega y direccion"
         document.getElementById("inputnameUsuario").value="";
         booleanEstado=false;
+        linkEstado=false;
+        document.getElementById("enviarPedido").innerHTML="";
     }else{
         alert("El carrito ya está vacio!");
     }
@@ -260,18 +262,26 @@ function enviosContinuar(){
     switch(booleanPanelDatosDomicilio){
         
         case true:
+            if(linkEstado==false){
+
                 //alert("tomamos las variables que se ingresen y las enviamos");
                 console.log("booleanPanelDatosDomicilio="+booleanPanelDatosDomicilio);
                 guardarDatosEnvio();
                 
                 //guardarDatos();
+            }
+                
 
          //guardarDatosEnvio() tiene incluido GUARDAR DATOS() dentro IMPORTANTE!!!
             break;
         case false:
+
+            if(linkEstado==false){
                 //alert("No se envia a la casa, lo pasa a buscar");
                 console.log("booleanPanelDatosDomicilio="+booleanPanelDatosDomicilio);
                 guardarDatos();
+            }
+                
             break;
     }
 }
@@ -280,7 +290,7 @@ function enviosContinuar(){
 function iralLocal(){
     document.getElementById("datosDireccion").innerHTML="";
     booleanPanelDatosDomicilio=false;//hace referencia al panel de datos nada mas
-    booleanEnvios=true;//declaro que NO hay datos de domicilio
+    booleanEnvios=false;//declaro que NO hay datos de domicilio
     //pintamos el btn de color permanente
     document.getElementById("idcirculoLocal").className+=" activo";
     document.getElementById("idcirculoCasa").className="circuloCasa";
@@ -335,11 +345,11 @@ StringDatosFacturas="";//vaciamos el string por las dudas
 
     //HAY ENVIO A DOMICILIO??
     if((envios==true)&(booleanEnvios==true)){
-        StringDatosFacturas+="%26send="+true;
+        StringDatosFacturas+="%26send=true";//ENVIO TRUE
         StringDatosFacturas+="%26dir="+address;
 
     }else{
-        StringDatosFacturas+="%26send="+false;
+        StringDatosFacturas+="%26send=false";//ENVIO FALSO
     }
     if(metodoPago=="mp"){
         StringDatosFacturas+="%26mp=true";
@@ -368,13 +378,14 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     whatsapp+=linkFactura;
     //whatsapp+=saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;//String total tiene el salto de linea
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido whatsapp LOCAL</a>';
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>Enviar Pedido whatsapp LOCAL</a>';
 
     whatsapp2+=linkFacturaGitHub;
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank">Enviar Pedido whatsapp GIT HUB</a>';
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>Enviar Pedido whatsapp GIT HUB</a>';
 
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFactura+'" target="_blank">Directo LOCAL</a>';
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFacturaGitHub+'" target="_blank">Directo GIT HUB</a>';
+    linkEstado=true;
 }
 
 function guardarDatosEnvio(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
@@ -451,45 +462,52 @@ function recorrerFacturasWhatsapp(){
 function recorrerFacturas(){
 
     Factura0.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=0";
+      try{  StringDatosFacturas+="%26---clp=0";
         StringDatosFacturas+="%26can="+myAlmacen[Factura0[index]].unidades;
         StringDatosFacturas+="%26id="+Factura0[index];
+}catch(err){console.log("error")}
     })
 
     Factura1.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=1";
+      try{  StringDatosFacturas+="%26---clp=1";
         StringDatosFacturas+="%26can="+myVerduleria[Factura1[index]].unidades;
         StringDatosFacturas+="%26id="+Factura1[index];
+}catch(err){console.log("error")}
     })
 
     Factura2.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=2";
+      try{  StringDatosFacturas+="%26---clp=2";
         StringDatosFacturas+="%26can="+myLimpieza[Factura2[index]].unidades;
         StringDatosFacturas+="%26id="+Factura2[index];
+}catch(err){console.log("error")}
     })
 
     Factura3.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=3";
+      try{  StringDatosFacturas+="%26---clp=3";
         StringDatosFacturas+="%26can="+myLacteos[Factura3[index]].unidades;
         StringDatosFacturas+="%26id="+Factura3[index];
+}catch(err){console.log("error")}
     })
 
     Factura4.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=4";
+      try{  StringDatosFacturas+="%26---clp=4";
         StringDatosFacturas+="%26can="+myBebidas[Factura4[index]].unidades;
         StringDatosFacturas+="%26id="+Factura4[index];
+}catch(err){console.log("error")}
     })
 
     Factura5.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=5";
+      try{  StringDatosFacturas+="%26---clp=5";
         StringDatosFacturas+="%26can="+myCarniceria[Factura5[index]].unidades;
         StringDatosFacturas+="%26id="+Factura5[index];
+}catch(err){console.log("error")}
     })
 
     Factura6.forEach((index)=>{
-        StringDatosFacturas+="%26---clp=6";
+      try{  StringDatosFacturas+="%26---clp=6";
         StringDatosFacturas+="%26can="+myOtros[Factura6[index]].unidades;
         StringDatosFacturas+="%26id="+Factura6[index];
+}catch(err){console.log("error")}
     })
 }
 
