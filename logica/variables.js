@@ -40,7 +40,14 @@ let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
 let booleanTerminarCompra=false;
 let seccion=0;
 
-//
+//LISTA
+//Datos del Comprador
+
+//metodo de pago
+let booleanEstado=false;
+
+//metodo de entrega
+
 let nameComprador="";
 let vuelto=0;
 let metodoPago="indefinido";//metodo de pago no definido
