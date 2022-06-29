@@ -365,8 +365,8 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     whatsapp+=stringTotal;//String total tiene el salto de linea
     document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido LOCAL</a>';
 
-    whatsapp+=linkFacturaGitHub;
-    document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido GIT HUB</a>';
+    whatsapp2+=linkFacturaGitHub;
+    document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank">Enviar Pedido GIT HUB</a>';
 }
 
 function guardarDatosEnvio(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */

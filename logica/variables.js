@@ -34,6 +34,7 @@ var myOtros=[];
 //whatsapp
 let numero="1168160790";
 let whatsapp="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
+let whatsapp2="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despues se concatena HTTP.... */
 let texto="";
 let saltolinea="+%0A+"; /*se agrega al texto por whatsapp */
 
