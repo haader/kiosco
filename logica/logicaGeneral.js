@@ -367,6 +367,9 @@ StringDatosFacturas="";//vaciamos el string por las dudas
 
     whatsapp2+=linkFacturaGitHub;
     document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank">Enviar Pedido GIT HUB</a>';
+
+    document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+linkFactura+'" target="_blank">Directo LOCAL</a>';
+    document.getElementById("totalid").innerHTML+='<a class="btnenviarPedido" href="'+linkFacturaGitHub+'" target="_blank">Directo GIT HUB</a>';
 }
 
 function guardarDatosEnvio(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
