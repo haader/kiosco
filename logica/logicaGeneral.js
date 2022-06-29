@@ -38,26 +38,26 @@ function borrarTodo(){
         Factura6=[];
         array2=[];
    
-        myAlmacen.forEach((element, index)=>{
-            myAlmacen[index].unidades=0;
+        myAlmacen.forEach(( element)=>{
+            myAlmacen[element].unidades=0;
         })
-        myVerduleria.forEach((element, index)=>{
-            myVerduleria[index].unidades=0;
+        myVerduleria.forEach(( element)=>{
+            myVerduleria[element].unidades=0;
         })
-        myLimpieza.forEach((element, index)=>{
-            myLimpieza[index].unidades=0;
+        myLimpieza.forEach(( element)=>{
+            myLimpieza[element].unidades=0;
         })
-        myLacteos.forEach((element, index)=>{
-            myLacteos[index].unidades=0;
+        myLacteos.forEach(( element)=>{
+            myLacteos[element].unidades=0;
         })
-        myBebidas.forEach((element, index)=>{
-            myBebidas[index].unidades=0;
+        myBebidas.forEach(( element)=>{
+            myBebidas[element].unidades=0;
         })
-        myCarniceria.forEach((element, index)=>{
-            myCarniceria[index].unidades=0;
+        myCarniceria.forEach(( element)=>{
+            myCarniceria[element].unidades=0;
         })
-        myOtros.forEach((element, index)=>{
-            myOtros[index].unidades=0;
+        myOtros.forEach(( element)=>{
+            myOtros[element].unidades=0;
         })
        
 
@@ -372,19 +372,38 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     //Factura: guarda los id de los productos (el tema es separarlo por seccion)
     //recorrerFacturasWhatsapp();
 
-    linkFactura+=StringDatosFacturas;
-    linkFacturaGitHub+=StringDatosFacturas;
+    //linkLocal   "http://127.0.0.1:5500/factura.html"+DATOS DE LA FACTURA
+    linkLocal+=StringDatosFacturas;
 
-    whatsapp+=linkFactura;
-    //whatsapp+=saltolinea+saltolinea+stringProductos;
+    //linkLocalGITHUB    "http://haader.github.io/kiosco/factura.html"+DATOS DE LA FACTURA
+    linkGitHub+=StringDatosFacturas;
+
+
+
+    //whatsapp   "https://api.whatsapp.com/send/?phone=549"+numero+"&text="
     whatsapp+=stringTotal;//String total tiene el salto de linea
+
+    //whatsapp   "https://api.whatsapp.com/send/?phone=549"+numero+"&text="
+    whatsapp+=linkLocal;
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>Enviar Pedido whatsapp LOCAL</a>';
 
-    whatsapp2+=linkFacturaGitHub;
+    //whatsapp2+github+factura
+    whatsapp2+=linkGitHub;
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>Enviar Pedido whatsapp GIT HUB</a>';
 
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFactura+'" target="_blank">Directo LOCAL</a>';
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFacturaGitHub+'" target="_blank">Directo GIT HUB</a>';
+    //sin link de whatsapp (hay que convertir los %26 a &)
+    
+    //console.log("1"+linkLocal);
+    let linkLocalReplace=linkLocal.replaceAll('%26','&');
+    //console.log("2"+linkLocalReplace);
+    
+    //console.log("1"+linkGitHub);
+    let linkGitHubReplace=linkGitHub.replaceAll('%26','&');
+    //console.log("2"+linkGitHubReplace);
+
+    //sin link de whatsapp (hay que convertir los %26 a &)
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkLocalReplace+'" target="_blank">Directo LOCAL</a>';
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkGitHubReplace+'" target="_blank">Directo GIT HUB</a>';
     linkEstado=true;
 }
 
@@ -411,45 +430,45 @@ description=document.getElementById("detalles").value; /* descripcion */
 }
 
 function recorrerFacturasWhatsapp(){
-    Factura0.forEach((index)=>{
+    Factura0.forEach((element)=>{
 
-        stringProductos+="-"+myAlmacen[Factura0[index]].unidades+" *"+myAlmacen[Factura0[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myAlmacen[Factura0[element]].unidades+" *"+myAlmacen[Factura0[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura0);
-    Factura1.forEach((index)=>{
+    Factura1.forEach((element)=>{
 
-        stringProductos+="-"+myVerduleria[Factura1[index]].unidades+" *"+myVerduleria[Factura1[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myVerduleria[Factura1[element]].unidades+" *"+myVerduleria[Factura1[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura1);
-    Factura2.forEach((index)=>{
+    Factura2.forEach((element)=>{
 
-        stringProductos+="-"+myLimpieza[Factura2[index]].unidades+" *"+myLimpieza[Factura2[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myLimpieza[Factura2[element]].unidades+" *"+myLimpieza[Factura2[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura2);
-    Factura3.forEach((index)=>{
+    Factura3.forEach((element)=>{
 
-        stringProductos+="-"+myLacteos[Factura3[index]].unidades+" *"+myLacteos[Factura3[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myLacteos[Factura3[element]].unidades+" *"+myLacteos[Factura3[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura3);
-    Factura4.forEach((index)=>{
+    Factura4.forEach((element)=>{
 
-        stringProductos+="-"+myBebidas[Factura4[index]].unidades+" *"+myBebidas[Factura4[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myBebidas[Factura4[element]].unidades+" *"+myBebidas[Factura4[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura4);
-    Factura5.forEach((index)=>{
+    Factura5.forEach((element)=>{
 
-        stringProductos+="-"+myCarniceria[Factura5[index]].unidades+" *"+myCarniceria[Factura5[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myCarniceria[Factura5[element]].unidades+" *"+myCarniceria[Factura5[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura5);
-    Factura6.forEach((index)=>{
+    Factura6.forEach((element)=>{
 
-        stringProductos+="-"+myOtros[Factura6[index]].unidades+" *"+myOtros[Factura6[index]].name+"* "+saltolinea;
+        stringProductos+="-"+myOtros[Factura6[element]].unidades+" *"+myOtros[Factura6[element]].name+"* "+saltolinea;
         
     })
     console.table(Factura6);
@@ -461,52 +480,53 @@ function recorrerFacturasWhatsapp(){
 
 function recorrerFacturas(){
 
-    Factura0.forEach((index)=>{
+    Factura0.forEach((element)=>{//element 1234 no hay 0!
       try{  StringDatosFacturas+="%26---clp=0";
-        StringDatosFacturas+="%26can="+myAlmacen[Factura0[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura0[index];
+      console.log("unidades 0"+myAlmacen[Factura0[element]].unidades);
+        StringDatosFacturas+="%26can="+myAlmacen[Factura0[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura0[element];
 }catch(err){console.log("error")}
     })
 
-    Factura1.forEach((index)=>{
+    Factura1.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=1";
-        StringDatosFacturas+="%26can="+myVerduleria[Factura1[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura1[index];
+        StringDatosFacturas+="%26can="+myVerduleria[Factura1[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura1[element];
 }catch(err){console.log("error")}
     })
 
-    Factura2.forEach((index)=>{
+    Factura2.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=2";
-        StringDatosFacturas+="%26can="+myLimpieza[Factura2[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura2[index];
+        StringDatosFacturas+="%26can="+myLimpieza[Factura2[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura2[element];
 }catch(err){console.log("error")}
     })
 
-    Factura3.forEach((index)=>{
+    Factura3.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=3";
-        StringDatosFacturas+="%26can="+myLacteos[Factura3[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura3[index];
+        StringDatosFacturas+="%26can="+myLacteos[Factura3[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura3[element];
 }catch(err){console.log("error")}
     })
 
-    Factura4.forEach((index)=>{
+    Factura4.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=4";
-        StringDatosFacturas+="%26can="+myBebidas[Factura4[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura4[index];
+        StringDatosFacturas+="%26can="+myBebidas[Factura4[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura4[element];
 }catch(err){console.log("error")}
     })
 
-    Factura5.forEach((index)=>{
+    Factura5.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=5";
-        StringDatosFacturas+="%26can="+myCarniceria[Factura5[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura5[index];
+        StringDatosFacturas+="%26can="+myCarniceria[Factura5[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura5[element];
 }catch(err){console.log("error")}
     })
 
-    Factura6.forEach((index)=>{
+    Factura6.forEach((element)=>{
       try{  StringDatosFacturas+="%26---clp=6";
-        StringDatosFacturas+="%26can="+myOtros[Factura6[index]].unidades;
-        StringDatosFacturas+="%26id="+Factura6[index];
+        StringDatosFacturas+="%26can="+myOtros[Factura6[element]].unidades;
+        StringDatosFacturas+="%26id="+Factura6[element];
 }catch(err){console.log("error")}
     })
 }
