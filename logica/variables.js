@@ -64,5 +64,5 @@ let address;
 let between_streets;
 let description;
 
-let linkFactura="http://127.0.0.1:5500/factura.html"
-let linkFacturaGitHub="http://127.0.0.1:5500/factura.html"
+let linkFactura="https://127.0.0.1:5500/factura.html"
+let linkFacturaGitHub="https://haader.github.io/kiosco/factura.html"
