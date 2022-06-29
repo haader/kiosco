@@ -1,3 +1,8 @@
+/*
+https://zainex.es/guia-rapida/html/html-url-encode-codificacion
+ */
+
+
 /* COMPRAR*/
 
 
@@ -363,10 +368,10 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     whatsapp+=linkFactura;
     //whatsapp+=saltolinea+saltolinea+stringProductos;
     whatsapp+=stringTotal;//String total tiene el salto de linea
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido LOCAL</a>';
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank">Enviar Pedido whatsapp LOCAL</a>';
 
     whatsapp2+=linkFacturaGitHub;
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank">Enviar Pedido GIT HUB</a>';
+    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank">Enviar Pedido whatsapp GIT HUB</a>';
 
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFactura+'" target="_blank">Directo LOCAL</a>';
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkFacturaGitHub+'" target="_blank">Directo GIT HUB</a>';
