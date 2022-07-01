@@ -50,6 +50,7 @@ let booleanEstado=false;
 //metodo de entrega
 
 let nameComprador="";
+let nameCompradorReplace="";
 let vuelto=0;
 let metodoPago="indefinido";//metodo de pago no definido
 let envios=true;

@@ -351,7 +351,9 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     StringDatosFacturas="?taco="+contadorP;
     
     //obtenemos  nombre la dirección metodo de pago
-    StringDatosFacturas+="%26name="+nameComprador;
+    nameCompradorReplace=nameComprador.replaceAll(" ","_");
+    console.log(nameCompradorReplace);
+    StringDatosFacturas+="%26name="+nameCompradorReplace;
 
     //HAY ENVIO A DOMICILIO??
     if((envios==true)&(booleanEnvios==true)){
@@ -389,16 +391,12 @@ StringDatosFacturas="";//vaciamos el string por las dudas
     linkGitHub+=StringDatosFacturas;
 
 
-
     //whatsapp   "https://api.whatsapp.com/send/?phone=549"+numero+"&text="
-    whatsapp+=stringTotal;//String total tiene el salto de linea
-
-    //whatsapp   "https://api.whatsapp.com/send/?phone=549"+numero+"&text="
-    whatsapp+=linkLocal;
+    whatsapp+=linkLocal+stringTotal;//String total tiene el salto de linea
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>  Enviar Pedido LOCAL</a>';
 
     //whatsapp2+github+factura
-    whatsapp2+=linkGitHub;
+    whatsapp2+=linkGitHub+stringTotal;//String total tiene el salto de linea
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>  Enviar Pedido GIT HUB</a>';
 
     //sin link de whatsapp (hay que convertir los %26 a &)
