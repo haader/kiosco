@@ -1,9 +1,5 @@
 /*https://www.web-dev-qa-db-es.com/es/javascript/como-leer-un-archivo-json-local-externo-en-javascript/1043362222/#:~:text=json)%20usando%20javascript%2C%20primero%20cree,junto%20con%20el%20archivo%20javascript.*/
 
-:root{
-    --top:5rem;
-}
-
 nav
 {
   display: flex;
@@ -679,44 +675,3 @@ width: 100%;
 
 
 
-
-/*-------media menos de 500 px---------*/
-@media screen and (max-width: 500px) {
-    
-    header
-    nav{
-        display: flex;
-        height:var(--top);
-        
-    }
-
-    header
-    nav
-    ul{
-        display: flex;
-        height:var(--top);
-        position: relative;
-        flex-wrap: wrap;
-        flex-direction: row;
-        
-    
-    }
-
-    header
-    nav
-    ul
-    .lista{
-        height:2rem;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: auto;
-
-    }
-
-    .containerPanel
-    {
-        top:var(--top);
-    }
-
-}
