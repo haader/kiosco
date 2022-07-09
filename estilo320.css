@@ -40,6 +40,15 @@
     .containerPanel
     {
         top:var(--top);
+
+    }
+    .imagen img{
+        top: 3rem;
+    }
+
+    .container{
+        margin-left: 2%;
+        top: 57%;
     }
 
 }
