@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factura</title>
     <link rel="stylesheet" href="./factura.css">
+    <link rel="stylesheet" href="./factura320.css">
 </head>
 <body>
 
@@ -14,18 +15,35 @@
         <img src="./img/market.png" alt="">
         
         <div class="titleKiosco">
-            <h3>Kiosco</h3><h4>Andrea</h4>
+            <h3>Mi_Kiosco</h3><h4></h4>
         </div>
 
-        <div class="datosComprador" id="datosComprador">
-            <h3>Datos del Comprador</h3>
-            <h4>Nombre: Juan Perez</h4>
-            <h4>Dirección: Calle Falsa 123</h4>
-            <h4>Metodo de pago: Efectivo</h4>
-            
-        </div>
+       
 
     </div>
+
+    <div class="datosCompradorTitle">
+        <h3>Datos del Comprador</h3>
+    </div>
+    <table class="datosComprador" id="datosComprador">
+        
+        <thead>
+            <tr>
+                <td>Nombre:</td>
+                <td>Dirección:</td>
+                <td>Metodo de pago:</td>
+            </tr>
+        </thead>
+        
+        <tbody id="datosCompradorRow">
+            <tr >
+                <td>Juan Perez</td>
+                <td>Calle Falsa 123</td>
+                <td>Efectivo</td>
+            </tr>    
+        </tbody>
+        
+    </table>
    
    <div class="contenedor">
 
