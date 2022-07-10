@@ -50,5 +50,54 @@
         margin-left: 2%;
         top: 57%;
     }
+    /****HOW TO BUY****/
 
+    .container .explicacion{
+        border: none;
+    }
+    .container .explicacion .paso{
+    
+        width: 7rem;
+        height: 7rem;
+    }
+
+    /*TARJETAS >500px*/
+
+    .container
+    .json 
+    .child{
+        height: 13rem;
+    }
+    .container
+    .json 
+    .child 
+    img{
+        height: 10rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0%;
+    }
+    .container
+    .json 
+    .child 
+    div{
+        height: 3rem;
+        
+    }
+                    .container
+                    .json 
+                    .child 
+                    div
+                    h3{
+                        height: 1rem;
+                        
+                    }
+    .container
+    .json 
+    .child 
+    button{
+        background: rebeccapurple;
+        height: 2rem;
+    }
 }

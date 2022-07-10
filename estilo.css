@@ -202,14 +202,34 @@ a
 .json
 .child
 {
-    overflow: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 10rem;
-    height: 12rem;
+    height: 13rem;
     text-align: center;
     border: 1px solid orange;
+    border-radius: 10px;
+    
 }
+
+                .container
+                .json
+                .child
+                img
+                {
+                    
+                    position: relative;
+                    width: 10rem;
+                    height: 10rem;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    
+                    
+                }
+
+
+
                             .container
                             .json
                             .child:hover
@@ -227,6 +247,11 @@ h3{
     padding: 0;
 }
 
+
+
+          
+
+
 .container
 .json
 .child
@@ -236,12 +261,12 @@ div
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
-    top: 80%;
     height: 2rem;   
     width: 100%;
     background: rgb(255, 255, 255);
     
 }
+
 
 .container
 .json
@@ -252,21 +277,11 @@ button
     background: chocolate;
     border: 1px solid black;
     border-radius: 5px;
+    height: 2rem;
 }
     
 
 
-    .container
-    .json
-    .child
-    img
-    {
-        
-        position: absolute;
-        width: 10rem;
-        height: 10rem;
-        z-index: 0;
-    }
 
                         
 .container
