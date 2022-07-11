@@ -145,11 +145,11 @@ if(booleanEstado==false){
         document.getElementById("divmetodoPago").innerHTML+='<input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">';
         document.getElementById("divmetodoPago").innerHTML+='<text onclick="PagoMP()">Mercado Pago</text>';
 
-        booleanEstado=true;
+        booleanEstado=true;//hace que no se repita el pintado constantemente!
     }
 
 }else if(document.getElementById("inputnameUsuario").value==""){
-            reseteardiv();
+            reseteardiv();//resetea todos los div de "datos comprador" "metodo de pago" etc
         booleanEstado=false;
     }
     
@@ -430,9 +430,9 @@ StringDatosFacturas="";//vaciamos el string por las dudas
 
 function guardarDatosEnvio(){  /*TIENE INCORPORADA LA FUNCTION "guardarDatos" */
 // verifica que haya valores en los input 
-address=document.getElementById("direccion").value;/* direccion */
-between_streets=document.getElementById("entrecalles").value; /* entre calle */
-description=document.getElementById("detalles").value; /* descripcion */
+let letaddress=document.getElementById("direccion").value;/* direccion */
+let letbetween_streets=document.getElementById("entrecalles").value; /* entre calle */
+let letdescription=document.getElementById("detalles").value; /* descripcion */
    
 //>>>>>DIRECCIÓN y ENTRE CALLES se envian por whatsapp!!!!<<<<<<<<
 
@@ -441,7 +441,9 @@ description=document.getElementById("detalles").value; /* descripcion */
                     alert("Para que podamos entregarle su compra en su domicilio necesitamos que complete los datos requeridos");
 
                 }else{
-                    
+                    address=letaddress.replaceAll(" ","_");
+                    between_streets=letbetween_streets.replaceAll(" ","_");
+                    description=letdescription.replaceAll(" ","_");
                     //concatenamos los valores de los input a la URL
 
                     guardarDatos();

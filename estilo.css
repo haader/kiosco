@@ -147,7 +147,21 @@ a
     border-radius: 10px;
     border: 2px solid black;
 }
+.container .howToBuy,.json
+.seccion, .icon-inner, path
 
+
+{
+    color: darkmagenta;
+    font-size: xx-large;
+    text-shadow: 3px 1px black;
+    
+}
+
+.seccion .iconSeccion ion-icon{
+    color: black;
+    
+}
 /*tarjetas*/
 /*tarjetas*/
 .container
@@ -174,8 +188,31 @@ a
     
 }
 
+.iconoVideo {
+    height: 100%;
+    font-weight: 800;
+    color: black;
+}
 
+.LinkVideo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    text-decoration: none;
+    color: darkmagenta;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px black;
+    font-weight: 800;
+    background: red;
+    border-radius: 10px;
+    border: 2px solid black;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
+/*JSON*/
 .json
 {
     display: flex;

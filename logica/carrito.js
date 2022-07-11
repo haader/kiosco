@@ -34,10 +34,6 @@ if(contadorCarrito==0){
 
 function AnimateCarrito(){
   
-let w=1.00;
-let string='"'+w.toString()+'rem"';
-
-   
 document.getElementById("icon").innerHTML+='<span id="animateCarrito"></span>';
 document.getElementById("animateCarrito").style.width='1rem';
 document.getElementById("animateCarrito").style.height='1rem';
