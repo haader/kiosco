@@ -55,7 +55,8 @@
     /****HOW TO BUY****/
 
     .Number {
-        bottom: -0.5rem;
+        display: flex;
+        
         position: relative;
         border-radius: 50%;
         color: black;
@@ -63,7 +64,9 @@
         height: 1rem;
         width: 1rem;
         left: -0.5rem;
+        justify-content: center;
     }
+    
 
     .container .explicacion{
         border: none;
@@ -71,12 +74,14 @@
     .container .explicacion .paso{
     
         width: 7rem;
-        height: 7rem;
+        height: 9rem;
     }
     .container .explicacion .paso text{
-    
+        height: -webkit-fill-available;
+        font-size: 0.7rem;
         display: flex;
         flex-direction: column-reverse;
+        background: linear-gradient(45deg, #8b008b, transparent);
     }
 
     /*TARJETAS >500px*/
