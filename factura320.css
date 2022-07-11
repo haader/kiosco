@@ -24,6 +24,7 @@
         font-size: 14px;
         border: 1px solid black;
         margin-bottom: 2rem;
+        width:100%;
     }
 
     .datosComprador td{/*tabla*/

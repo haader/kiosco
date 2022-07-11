@@ -16,97 +16,113 @@ let whatsapp2="https://api.whatsapp.com/send/?phone=549"+numero+"&text=";/*despu
 }
 function borrarTodo(){
 
-    
-    if(total!=0){
-        /*eliminamo los indicadores de "seleccionado" */
-      
-        [].forEach.call(document.querySelectorAll("TagSeleccionado"), function(TagSeleccionado){
-            TagSeleccionado.parentNode.removeChild(TagSeleccionado);
-        });
-
-        contadorCarrito=0;
-        document.getElementById("carritoCont").innerHTML=contadorCarrito;
-        document.getElementById("carritoTotal").innerText=total+"$";
-    
-
-        document.getElementById("listacompra").remove();
-        
-        document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
-        booleanTerminarCompra=false;
-
-        //vaciamos array de lista
-        Factura0=[];
-        Factura1=[];
-        Factura2=[];
-        Factura3=[];
-        Factura4=[];
-        Factura5=[];
-        Factura6=[];
-        array2=[];
    
-        myAlmacen.forEach((element,index)=>{
-            myAlmacen[index].unidades=0;
-        })
-        myVerduleria.forEach(( element,index)=>{
-            myVerduleria[index].unidades=0;
-        })
-        myLimpieza.forEach(( element,index)=>{
-            myLimpieza[index].unidades=0;
-        })
-        myLacteos.forEach(( element,index)=>{
-            myLacteos[index].unidades=0;
-        })
-        myBebidas.forEach(( element,index)=>{
-            myBebidas[index].unidades=0;
-        })
-        myCarniceria.forEach(( element,index)=>{
-            myCarniceria[index].unidades=0;
-        })
-        myOtros.forEach(( element,index)=>{
-            myOtros[index].unidades=0;
-        })
+    if(total!=0){
        
+        let boleandConfirm=confirm("desea borrar todo?");
 
-        contadorP=0;//colocamos el contador de TIPO DE PRODUCTOS en cero
-        
-    
-        total=0;
-        document.getElementById("total").innerHTML=total;
+        switch(boleandConfirm){
+            case true:
+                procesoBorrarTodo();
+                break;
+            case false:
 
-        document.getElementById("carritoTotal").innerText=total+"$";
-    
-       /* btnTerminarCompra.setAttribute('onClick',"compranull()");*/
-       //limpiamos los metdos de pagos y el vuelto
-        vuelto=0;
-        metodoPago="indefinido";//No establecido
-        if(booleanEstado==true){
-        document.getElementById("inmp").checked =false;
-        document.getElementById("incash").checked =false;
+                break;
         }
-
         
-
-        //limpiamos los datosDireccion
-        
-        booleanPanelDatosDomicilio=false;
-
-        //opacidad del btn CONTINUAR
-        document.getElementById("btnContinuar").style.opacity="0.3";
-
-        reseteardiv();//reseteamos los div "metodo de pago, div abono, entrega y direccion"
-        document.getElementById("inputnameUsuario").value="";
-        booleanEstado=false;
-        linkEstado=false;
-        document.getElementById("enviarPedido").innerHTML="";
-
-        reiniciarLinks();//variables de link
-        OpacityBtnBorrar();
 
     }else{
         alert("El carrito ya está vacio!");
     }
 
 }
+
+function procesoBorrarTodo(){
+     /*eliminamo los indicadores de "seleccionado" */
+      
+     [].forEach.call(document.querySelectorAll("TagSeleccionado"), function(TagSeleccionado){
+        TagSeleccionado.parentNode.removeChild(TagSeleccionado);
+    });
+
+    contadorCarrito=0;
+    document.getElementById("carritoCont").innerHTML=contadorCarrito;
+    document.getElementById("carritoTotal").innerText=total+"$";
+
+
+    document.getElementById("listacompra").remove();
+    
+    document.getElementById("tabla").innerHTML+='<tbody id="listacompra"></tbody>';
+    booleanTerminarCompra=false;
+
+    //vaciamos array de lista
+    Factura0=[];
+    Factura1=[];
+    Factura2=[];
+    Factura3=[];
+    Factura4=[];
+    Factura5=[];
+    Factura6=[];
+    array2=[];
+
+    myAlmacen.forEach((element,index)=>{
+        myAlmacen[index].unidades=0;
+    })
+    myVerduleria.forEach(( element,index)=>{
+        myVerduleria[index].unidades=0;
+    })
+    myLimpieza.forEach(( element,index)=>{
+        myLimpieza[index].unidades=0;
+    })
+    myLacteos.forEach(( element,index)=>{
+        myLacteos[index].unidades=0;
+    })
+    myBebidas.forEach(( element,index)=>{
+        myBebidas[index].unidades=0;
+    })
+    myCarniceria.forEach(( element,index)=>{
+        myCarniceria[index].unidades=0;
+    })
+    myOtros.forEach(( element,index)=>{
+        myOtros[index].unidades=0;
+    })
+   
+
+    contadorP=0;//colocamos el contador de TIPO DE PRODUCTOS en cero
+    
+
+    total=0;
+    document.getElementById("total").innerHTML=total;
+
+    document.getElementById("carritoTotal").innerText=total+"$";
+
+   /* btnTerminarCompra.setAttribute('onClick',"compranull()");*/
+   //limpiamos los metdos de pagos y el vuelto
+    vuelto=0;
+    metodoPago="indefinido";//No establecido
+    if(booleanEstado==true){
+    document.getElementById("inmp").checked =false;
+    document.getElementById("incash").checked =false;
+    }
+
+    
+
+    //limpiamos los datosDireccion
+    
+    booleanPanelDatosDomicilio=false;
+
+    //opacidad del btn CONTINUAR
+    document.getElementById("btnContinuar").style.opacity="0.3";
+
+    reseteardiv();//reseteamos los div "metodo de pago, div abono, entrega y direccion"
+    document.getElementById("inputnameUsuario").value="";
+    booleanEstado=false;
+    linkEstado=false;
+    document.getElementById("enviarPedido").innerHTML="";
+
+    reiniciarLinks();//variables de link
+    OpacityBtnBorrar();
+}
+
 //funcion que resetea los div de las compras
 function reseteardiv(){
     document.getElementById("metodoPago").innerHTML="<h4>Metodo de Pago</h4>";
@@ -121,12 +137,13 @@ if(booleanEstado==false){
 
     if(document.getElementById("inputnameUsuario").value!==""){
         
-        document.getElementById("metodoPago").innerHTML="<h3>Metodo de Pago</h3>";
-        document.getElementById("metodoPago").innerHTML+='<input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">';
-        document.getElementById("metodoPago").innerHTML+='<text onclick="PagoCash()">Efectivo</text>';
+        document.getElementById("metodoPago").innerHTML="<div><h3>Metodo de Pago</h3></div>";
+        document.getElementById("metodoPago").innerHTML+='<div id="divmetodoPago"></div>';
+        document.getElementById("divmetodoPago").innerHTML+='<input id="incash" name="metodo_pago" type="radio" value="Efectivo" onclick="PagoCash()">';
+        document.getElementById("divmetodoPago").innerHTML+='<text onclick="PagoCash()">Efectivo</text>';
 
-        document.getElementById("metodoPago").innerHTML+='<input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">';
-        document.getElementById("metodoPago").innerHTML+='<text onclick="PagoMP()">Mercado Pago</text>';
+        document.getElementById("divmetodoPago").innerHTML+='<input id="inmp" name="metodo_pago" type="radio" value="Mercado Pago" onclick="PagoMP()">';
+        document.getElementById("divmetodoPago").innerHTML+='<text onclick="PagoMP()">Mercado Pago</text>';
 
         booleanEstado=true;
     }
@@ -393,24 +410,20 @@ StringDatosFacturas="";//vaciamos el string por las dudas
 
     //whatsapp   "https://api.whatsapp.com/send/?phone=549"+numero+"&text="
     whatsapp+=linkLocal+stringTotal;//String total tiene el salto de linea
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>  Enviar Pedido LOCAL</a>';
+                /*document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>  Enviar Pedido LOCAL</a>';*/
 
     //whatsapp2+github+factura
     whatsapp2+=linkGitHub+stringTotal;//String total tiene el salto de linea
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+whatsapp2+'" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon>  Enviar Pedido GIT HUB</a>';
 
     //sin link de whatsapp (hay que convertir los %26 a &)
-    
-    //console.log("1"+linkLocal);
-    let linkLocalReplace=linkLocal.replaceAll('%26','&');
-    //console.log("2"+linkLocalReplace);
-    
-    //console.log("1"+linkGitHub);
+
     let linkGitHubReplace=linkGitHub.replaceAll('%26','&');
     //console.log("2"+linkGitHubReplace);
 
     //sin link de whatsapp (hay que convertir los %26 a &)
-    document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkLocalReplace+'" target="_blank">Directo LOCAL</a>';
+                /*document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkLocalReplace+'" target="_blank">Directo LOCAL</a>';*/
+
     document.getElementById("enviarPedido").innerHTML+='<a class="btnenviarPedido" href="'+linkGitHubReplace+'" target="_blank">Directo GIT HUB</a>';
     linkEstado=true;
 }

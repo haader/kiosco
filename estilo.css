@@ -378,6 +378,21 @@ li
     color: black;
     font-size: 1.5rem;
 }
+
+
+                            #animateCarrito{
+                             border: 2px solid red;
+                             border-radius: 50%;
+                             display: flex;
+                             position: absolute;
+                             
+                             width: 1rem;
+                             height: 1rem;  
+                             z-index: -10;
+                             transition: 2s;
+                            }
+
+                                          
 #carritoCont{
     display: flex;
     position: absolute;
@@ -524,7 +539,7 @@ li
                                     }
 
                                     .total 
-                                    text,.total h3,.containerLista h3
+                                    text,.total h3
                                     {   
                                         display: flex;
                                         font-size: 1.5rem;
@@ -532,6 +547,16 @@ li
                                         text-align: center;
                                         justify-content: center;
 
+                                    }
+
+                                    .containerLista h3
+                                    {   
+                                        display: flex;
+                                        font-size: 1.5rem;
+                                        font-weight: 600;
+                                        text-align: center;
+                                        justify-content: center;
+                                        color: red;
                                     }
 
 
@@ -570,8 +595,32 @@ li
 .total 
 .metodoPago{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+.total 
+.metodoPago h4{
+  margin-bottom: 0rem;
+}
+
+
+.total 
+.metodoPagoCash{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.total .metodoPagoCash text{
+    font-size: 1rem;
+}
+
+.total 
+.metodoPago #divmetodoPago{
+    display: flex;
+    flex-direction: row;
 }
 
 .total
@@ -611,9 +660,9 @@ width: 100%;
     display: flex;
     border-radius: 50%;
     background: white;
+    align-items: center;
     width: 5rem;
     height: 5rem;
-    text-align: center;
     justify-content: center;
     border: 1px solid black;
 }
@@ -683,6 +732,7 @@ width: 100%;
 }
 
 .enviarPedido{
+    margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
 }
