@@ -115,7 +115,10 @@
     .json 
     .child 
     button{
-        background: rebeccapurple;
+        background: #e04d6f;
         height: 2rem;
+        font-family: monospace;
+        font-size: 1rem;
+        color: #df9a9a;;
     }
 }

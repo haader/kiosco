@@ -9,7 +9,7 @@ nav
     left: 0;
     width: 100%;
     height: 2rem;
-    background: linear-gradient(45deg, #ed5176, #cd97a4);
+    background: linear-gradient(45deg, #ed5176, #772633);
     z-index: 2;
   
 }
@@ -92,7 +92,7 @@ ul
                     a
                     .texto
                     {
-                        color: #973131;
+                        color: #df9a9a;
                         font-weight: 400;
                         z-index: 2;
                         text-shadow: 1px 1px black;
@@ -223,7 +223,7 @@ position: relative;
     font-size: 1.2rem;
     text-shadow: 1px 1px black;
     font-weight: 800;
-    background: red;
+    background: linear-gradient(45deg, #ea597b, #71232f);
     border-radius: 10px;
     border: 2px solid black;
     align-items: center;
