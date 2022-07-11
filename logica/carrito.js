@@ -41,7 +41,7 @@ let string='"'+w.toString()+'rem"';
 document.getElementById("icon").innerHTML+='<span id="animateCarrito"></span>';
 document.getElementById("animateCarrito").style.width='1rem';
 document.getElementById("animateCarrito").style.height='1rem';
-document.getElementById("animateCarrito").style.borderWidth='2px'; 
+document.getElementById("animateCarrito").style.borderWidth='3px'; 
 document.getElementById("animateCarrito").style.borderStyle='solid';
 document.getElementById("animateCarrito").style.borderColor='red';
 document.getElementById("animateCarrito").style.opacity='1';
