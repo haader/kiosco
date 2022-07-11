@@ -54,6 +54,17 @@
     }
     /****HOW TO BUY****/
 
+    .Number {
+        bottom: -0.5rem;
+        position: relative;
+        border-radius: 50%;
+        color: black;
+        background: white;
+        height: 1rem;
+        width: 1rem;
+        left: -0.5rem;
+    }
+
     .container .explicacion{
         border: none;
     }
@@ -61,6 +72,11 @@
     
         width: 7rem;
         height: 7rem;
+    }
+    .container .explicacion .paso text{
+    
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     /*TARJETAS >500px*/
