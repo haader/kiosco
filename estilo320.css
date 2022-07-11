@@ -44,12 +44,13 @@
 
     }
     .imagen img{
-        top: 3rem;
+        top: 4rem;
+        height: 80%;
     }
 
     .container{
         margin-left: 2%;
-        top: 57%;
+        
     }
     /****HOW TO BUY****/
 
