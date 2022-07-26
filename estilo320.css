@@ -55,16 +55,14 @@
     /****HOW TO BUY****/
 
     .Number {
-        display: flex;
         
-        position: relative;
+        position: absolute;
         border-radius: 50%;
         color: black;
         background: white;
         height: 1rem;
         width: 1rem;
-        left: -0.5rem;
-        justify-content: center;
+        
     }
     
 
@@ -74,7 +72,7 @@
     .container .explicacion .paso{
     
         width: 7rem;
-        height: 9rem;
+        height: 8rem;
     }
     .container .explicacion .paso text{
         height: -webkit-fill-available;

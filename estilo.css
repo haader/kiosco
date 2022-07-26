@@ -156,6 +156,8 @@ a
     flex-direction: column;
 }
 .Number{
+    border: 1px solid black;
+    text-align: center;
     position: absolute;
     border-radius: 50%;
     color: black;
@@ -199,10 +201,34 @@ position: relative;
 .explicacion
 .paso
 {
+    display: flex;
    
     height: 10rem;
     width: 10rem;
     border: 1px solid black;
+    border-radius:10px;
+    overflow: hidden;
+    
+}
+.container
+.explicacion
+.paso
+img{
+    height: 10rem;
+}
+.container
+.explicacion
+.paso
+text{
+    position: relative;
+    top: -2rem;
+    height: -webkit-fill-available;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column-reverse;
+    background: linear-gradient(45deg, #8b008b, transparent);
+    text-align: center;
+    
     
 }
 
