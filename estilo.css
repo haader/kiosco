@@ -133,6 +133,21 @@ a
     
 }
 
+.imagen .cartel{
+    padding: 0.25rem;
+    font-weight: 500;
+    border-radius: 10px;
+    color: #ffffff;
+    position: absolute;
+    top: 5.4rem;
+    background: #ffeb96;
+    /* border: 1px solid black; */
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 5px #5692d8, 0px 0px 15px #5692d8, 0px 0px 30px #5692d8;
+    box-shadow: 4px 3px 4px 0px #000000a6;
+    
+}
+
 .container
 {
     display: flex;
@@ -192,7 +207,7 @@ position: relative;
     width: 90%;
     gap: 1rem;
     flex-wrap: wrap;
-    border: 1px solid black;
+    
     justify-content: center;
     align-items: center;
 
@@ -355,7 +370,7 @@ div
 button
 {
     width: 100%;
-    background: chocolate;
+    background: #8b008b;
     border: 1px solid black;
     border-radius: 5px;
     height: 2rem;
